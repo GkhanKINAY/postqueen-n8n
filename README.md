@@ -1,24 +1,27 @@
 # Introduction
-[Postiz](https://postiz.com) is a powerful social media scheduling tool that allows you to manage your social media accounts efficiently.
+
+> Fork of [n8n-nodes-postiz](https://github.com/gitroomhq/postiz-n8n) (MIT) by Nevo David / Gitroom, rebranded for [PostQueen](https://postqueen.ai). Published on npm as `n8n-nodes-postqueen`. The credential's Host field can point to any self-hosted Postiz-compatible instance.
+
+[PostQueen](https://postqueen.ai) is a powerful social media scheduling tool that allows you to manage your social media accounts efficiently.
 
 You can use n8n to automate your workflow and post to multiple social media platforms at once.
 
-You can [self-host](https://docs.postiz.com/introduction) Postiz or use our [cloud version](https://platform.postiz.com).
+You can [self-host](https://docs.postqueen.ai/introduction) PostQueen or use our [cloud version](https://platform.postqueen.ai).
 For example: Load news from Reddit >> Make it a video with AI >> Post it to your social media accounts.
 
-Postiz supports: X, LinkedIn, BlueSky, Instagram, Facebook, TikTok, YouTube, Pinterest, Dribbble, Telegram, Discord, Slack, Threads, Lemmy, Reddit, Mastodon, Warpcast, Nostr and VK.
+PostQueen supports: X, LinkedIn, BlueSky, Instagram, Facebook, TikTok, YouTube, Pinterest, Dribbble, Telegram, Discord, Slack, Threads, Lemmy, Reddit, Mastodon, Warpcast, Nostr and VK.
 
-You can learn how to use Postiz + n8n after installation here:
+You can learn how to use PostQueen + n8n after installation here:
 https://youtu.be/c50u3K3xsCI
 
 ---
 
 > Note
-> If you are self-hosting Postiz on port 5000 (reverse proxy),
+> If you are self-hosting PostQueen on port 5000 (reverse proxy),
 > Your host must end with /api for example:
 > http://yourdomain.com/api
 
-Alternatively, you can use the SDK with curl, check the [Postiz API documentation](https://docs.postiz.com/public-api) for more information.
+Alternatively, you can use the SDK with curl, check the [PostQueen API documentation](https://docs.postqueen.ai/public-api) for more information.
 
 ---
 
@@ -27,7 +30,7 @@ Alternatively, you can use the SDK with curl, check the [Postiz API documentatio
 - Click on settings
 - Click on Community Nodes
 - Click on Install
-- Add "n8n-nodes-postiz" to "npm Package Name"
+- Add "n8n-nodes-postqueen" to "npm Package Name"
 - Click on Install
 
 ![community-node.png](community-node.png)
@@ -42,9 +45,9 @@ mkdir -p ~/.n8n/custom
 npm init -y
 ```
 
-Then install the Postiz node package:
+Then install the PostQueen node package:
 ```
-npm install n8n-nodes-postiz
+npm install n8n-nodes-postqueen
 ```
 
 ## For docker users (manual installation)
@@ -54,9 +57,9 @@ mkdir -p ~/n8n-custom-nodes
 npm init -y
 ```
 
-install the Postiz node package:
+install the PostQueen node package:
 ```bash
-npm install n8n-nodes-postiz
+npm install n8n-nodes-postqueen
 ```
 
 When you run the n8n docker container, mount the custom nodes folder to the container:

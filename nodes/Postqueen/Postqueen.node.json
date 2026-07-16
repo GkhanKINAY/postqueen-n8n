@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.postiz",
+	"node": "n8n-nodes-base.postqueen",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Social Media", "Scheduling"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://docs.postiz.com/public-api"
+				"url": "https://docs.postqueen.ai/public-api"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.postiz.com/public-api"
+				"url": "https://docs.postqueen.ai/public-api"
 			}
 		]
 	}

@@ -5,6 +5,5 @@ const {copyFile} = require('fs/promises');
 task('build:icons', copyIcons);
 
 async function copyIcons() {
-	await copyFile('nodes/Postiz/postiz.png', 'dist/nodes/Postiz/postiz.png');
-	return copyFile('pnpm-lock.yaml', 'dist/pnpm-lock.yaml');
+	return copyFile('nodes/Postqueen/postqueen.png', 'dist/nodes/Postqueen/postqueen.png');
 }

@@ -1,7 +1,7 @@
 {
-  "name": "n8n-nodes-postiz",
+  "name": "n8n-nodes-postqueen",
   "version": "0.2.17",
-  "description": "The ultimate social media scheduling tool",
+  "description": "PostQueen community node for n8n (fork of n8n-nodes-postiz)",
   "keywords": [
     "social media",
     "scheduling tool",
@@ -9,14 +9,13 @@
     "n8n-community-node-package"
   ],
   "license": "MIT",
-  "homepage": "https://postiz.com",
+  "homepage": "https://postqueen.ai",
   "author": {
-    "name": "Nevo David",
-    "email": "nevo@postiz.com"
+    "name": "PostQueen (fork of n8n-nodes-postiz by Nevo David)"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gitroomhq/postiz-n8n"
+    "url": "https://github.com/GkhanKINAY/postqueen-n8n"
   },
   "engines": {
     "node": ">=20.15"
@@ -29,7 +28,7 @@
     "lint": "eslint nodes credentials package.json",
     "lintfix": "eslint nodes credentials package.json --fix",
     "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json",
-    "publish-n8n": "pnpm publish --access public"
+    "publish-n8n": "npm publish --access public"
   },
   "files": [
     "dist"
@@ -37,10 +36,10 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/PostizApi.credentials.js"
+      "dist/credentials/PostQueenApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/Postiz/Postiz.node.js"
+      "dist/nodes/Postqueen/Postqueen.node.js"
     ]
   },
   "devDependencies": {

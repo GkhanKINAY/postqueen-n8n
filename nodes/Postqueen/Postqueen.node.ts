@@ -6,27 +6,27 @@ import {
 	INodeTypeDescription,
 	NodeOperationError,
 } from 'n8n-workflow';
-import { NodeConnectionType } from 'n8n-workflow';
-import { postizApiRequest } from './GenericFunctions';
+import { NodeConnectionTypes } from 'n8n-workflow';
+import { postqueenApiRequest } from './GenericFunctions';
 
-export class Postiz implements INodeType {
+export class PostQueen implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'Postiz',
-		name: 'postiz',
+		displayName: 'PostQueen',
+		name: 'postqueen',
 		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
-		icon: 'file:postiz.png',
+		icon: 'file:postqueen.png',
 		group: ['output'],
 		version: 1,
 		subtitle: '={{$parameter["operation"]}}',
-		description: 'Consume Postiz API',
+		description: 'Consume PostQueen API',
 		defaults: {
-			name: 'Postiz',
+			name: 'PostQueen',
 		},
-		inputs: [NodeConnectionType.Main],
-		outputs: [NodeConnectionType.Main],
+		inputs: [NodeConnectionTypes.Main],
+		outputs: [NodeConnectionTypes.Main],
 		credentials: [
 			{
-				name: 'postizApi',
+				name: 'postqueenApi',
 				required: true,
 			},
 		],
@@ -40,8 +40,8 @@ export class Postiz implements INodeType {
 					{
 						name: 'Create Post',
 						value: 'createPost',
-						description: 'Schedule a post to Postiz',
-						action: 'Schedule a post to postiz',
+						description: 'Schedule a post to PostQueen',
+						action: 'Schedule a post to postqueen',
 					},
 					{
 						name: 'Delete Post',
@@ -70,8 +70,8 @@ export class Postiz implements INodeType {
 					{
 						name: 'Upload File',
 						value: 'uploadFile',
-						description: 'Upload a file to Postiz',
-						action: 'Upload a file to postiz',
+						description: 'Upload a file to PostQueen',
+						action: 'Upload a file to postqueen',
 					},
 					{
 						name: 'Video Function',
@@ -347,7 +347,7 @@ export class Postiz implements INodeType {
 								default: '',
 								required: true,
 								description:
-									'ID of the channel (you can get from the get channels operation or from the Postiz UI)',
+									'ID of the channel (you can get from the get channels operation or from the PostQueen UI)',
 							},
 							{
 								displayName: 'Group',
@@ -703,7 +703,7 @@ export class Postiz implements INodeType {
 						posts,
 					};
 
-					responseData = await postizApiRequest.call(this, 'POST', '/posts', body);
+					responseData = await postqueenApiRequest.call(this, 'POST', '/posts', body);
 				}
 
 				if (operation === 'getPosts') {
@@ -717,7 +717,7 @@ export class Postiz implements INodeType {
 						...(customer && { customer }),
 					};
 
-					responseData = await postizApiRequest.call(this, 'GET', '/posts', {}, query);
+					responseData = await postqueenApiRequest.call(this, 'GET', '/posts', {}, query);
 				}
 
 				if (operation === 'uploadFile') {
@@ -740,16 +740,16 @@ export class Postiz implements INodeType {
 
 					const formData = new FormData();
 					formData.append('file', blob, binaryData.fileName);
-					responseData = await postizApiRequest.call(this, 'POST', '/upload', formData);
+					responseData = await postqueenApiRequest.call(this, 'POST', '/upload', formData);
 				}
 
 				if (operation === 'getIntegrations') {
-					responseData = await postizApiRequest.call(this, 'GET', '/integrations');
+					responseData = await postqueenApiRequest.call(this, 'GET', '/integrations');
 				}
 
 				if (operation === 'deletePost') {
 					const postId = this.getNodeParameter('postId', i) as string;
-					responseData = await postizApiRequest.call(this, 'DELETE', `/posts/${postId}`);
+					responseData = await postqueenApiRequest.call(this, 'DELETE', `/posts/${postId}`);
 				}
 
 				if (operation === 'generateVideo') {
@@ -775,7 +775,7 @@ export class Postiz implements INodeType {
 						});
 					}
 
-					responseData = await postizApiRequest.call(this, 'POST', '/generate-video', body);
+					responseData = await postqueenApiRequest.call(this, 'POST', '/generate-video', body);
 				}
 
 				if (operation === 'videoFunction') {
@@ -802,7 +802,7 @@ export class Postiz implements INodeType {
 						});
 					}
 
-					responseData = await postizApiRequest.call(this, 'POST', '/video/function', body);
+					responseData = await postqueenApiRequest.call(this, 'POST', '/video/function', body);
 				}
 
 				const executionData = this.helpers.constructExecutionMetaData(
