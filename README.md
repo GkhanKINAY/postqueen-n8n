@@ -1,6 +1,6 @@
 # Introduction
 
-> Fork of [n8n-nodes-postiz](https://github.com/gitroomhq/postiz-n8n) (MIT) by Nevo David / Gitroom, rebranded for [PostQueen](https://postqueen.ai). Published on npm as `n8n-nodes-postqueen`. The credential's Host field can point to any self-hosted PostQueen-compatible instance.
+> Published on npm as `n8n-nodes-postqueen`. The credential's Host field can point to any self-hosted PostQueen instance. Thanks to Nevo David and the Postiz contributors for the foundation this builds on.
 
 [PostQueen](https://postqueen.ai) is a powerful social media scheduling tool that allows you to manage your social media accounts efficiently.
 

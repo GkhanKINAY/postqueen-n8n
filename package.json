@@ -1,7 +1,7 @@
 {
   "name": "n8n-nodes-postqueen",
   "version": "0.2.17",
-  "description": "PostQueen community node for n8n (fork of n8n-nodes-postiz)",
+  "description": "PostQueen community node for n8n",
   "keywords": [
     "social media",
     "scheduling tool",
@@ -11,7 +11,7 @@
   "license": "MIT",
   "homepage": "https://postqueen.ai",
   "author": {
-    "name": "PostQueen (fork of n8n-nodes-postiz by Nevo David)"
+    "name": "PostQueen"
   },
   "repository": {
     "type": "git",
