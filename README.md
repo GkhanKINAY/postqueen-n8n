@@ -6,7 +6,7 @@
 
 You can use n8n to automate your workflow and post to multiple social media platforms at once.
 
-You can [self-host](https://docs.postqueen.ai/introduction) PostQueen or use our [cloud version](https://platform.postqueen.ai).
+You can [self-host](https://docs.postqueen.ai/introduction) PostQueen or use our [cloud version](https://app.postqueen.ai).
 For example: Load news from Reddit >> Make it a video with AI >> Post it to your social media accounts.
 
 PostQueen supports: X, LinkedIn, BlueSky, Instagram, Facebook, TikTok, YouTube, Pinterest, Dribbble, Telegram, Discord, Slack, Threads, Lemmy, Reddit, Mastodon, Warpcast, Nostr and VK.
