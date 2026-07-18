@@ -1,6 +1,6 @@
 # Introduction
 
-> Fork of [n8n-nodes-postiz](https://github.com/gitroomhq/postiz-n8n) (MIT) by Nevo David / Gitroom, rebranded for [PostQueen](https://postqueen.ai). Published on npm as `n8n-nodes-postqueen`. The credential's Host field can point to any self-hosted Postiz-compatible instance.
+> Fork of [n8n-nodes-postiz](https://github.com/gitroomhq/postiz-n8n) (MIT) by Nevo David / Gitroom, rebranded for [PostQueen](https://postqueen.ai). Published on npm as `n8n-nodes-postqueen`. The credential's Host field can point to any self-hosted PostQueen-compatible instance.
 
 [PostQueen](https://postqueen.ai) is a powerful social media scheduling tool that allows you to manage your social media accounts efficiently.
 
@@ -11,8 +11,7 @@ For example: Load news from Reddit >> Make it a video with AI >> Post it to your
 
 PostQueen supports: X, LinkedIn, BlueSky, Instagram, Facebook, TikTok, YouTube, Pinterest, Dribbble, Telegram, Discord, Slack, Threads, Lemmy, Reddit, Mastodon, Warpcast, Nostr and VK.
 
-You can learn how to use PostQueen + n8n after installation here:
-https://youtu.be/c50u3K3xsCI
+See the [PostQueen API documentation](https://docs.postqueen.ai/public-api) to learn how to use PostQueen with n8n.
 
 ---
 
