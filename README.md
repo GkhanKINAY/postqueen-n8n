@@ -67,10 +67,13 @@ npm init -y
 npm install n8n-nodes-postqueen
 ```
 
-Then mount that folder into the container and point n8n at it with an environment variable:
+Then mount that folder into the container (host path → `/home/node/n8n-custom-nodes`) and point n8n at it:
 
-```
-N8N_CUSTOM_EXTENSIONS="/home/node/n8n-custom-nodes"
+```bash
+docker run -d --name n8n \
+  -v ~/n8n-custom-nodes:/home/node/n8n-custom-nodes \
+  -e N8N_CUSTOM_EXTENSIONS="/home/node/n8n-custom-nodes" \
+  -p 5678:5678 n8nio/n8n
 ```
 
 Requires n8n running on Node.js **>=20.15**.
