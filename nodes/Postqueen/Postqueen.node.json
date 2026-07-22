@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.postqueen",
+	"node": "n8n-nodes-postqueen.postqueen",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Social Media", "Scheduling"],
