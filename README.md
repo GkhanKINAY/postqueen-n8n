@@ -32,7 +32,7 @@
 
 This is an [n8n community node](https://docs.n8n.io/integrations/community-nodes/) for [PostQueen](https://postqueen.ai), the open-source, AI-native social media scheduler. It lets you schedule and manage posts across 30+ social networks directly from your n8n workflows — for example: *load news from Reddit → turn it into a video with AI → publish it to all your channels.*
 
-PostQueen supports X, LinkedIn, Bluesky, Instagram, Facebook, TikTok, YouTube, Pinterest, Dribbble, Telegram, Discord, Slack, Threads, Lemmy, Reddit, Mastodon, Farcaster, Nostr, VK, and more. Use it in the [cloud](https://app.postqueen.ai) or [self-host](https://github.com/GkhanKINAY/postqueen-docker-compose) the whole stack.
+PostQueen supports X, LinkedIn, Bluesky, Instagram, Facebook, TikTok, YouTube, Pinterest, Dribbble, Telegram, Discord, Slack, Threads, Lemmy, Reddit, Mastodon, Farcaster, Nostr, VK, and more. Use it in the [cloud](https://app.postqueen.ai) or [self-host](https://docs.postqueen.ai/introduction) the whole stack.
 
 > This node is a fork of the [Postiz](https://github.com/gitroomhq/postiz-app) community node. Thanks to Nevo David and the Postiz contributors for the foundation this builds on.
 
