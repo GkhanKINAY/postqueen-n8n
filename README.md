@@ -1,21 +1,19 @@
 <p align="center">
   <a href="https://postqueen.ai">
-    <img src="https://postqueen.ai/icon.svg" width="76" alt="PostQueen" />
+    <img src=".github/assets/header.svg" width="820" alt="PostQueen n8n node" />
   </a>
 </p>
 
-<h1 align="center">PostQueen node for n8n</h1>
-
 <p align="center">
-  <strong>Automate social media scheduling with PostQueen inside your n8n workflows.</strong><br />
-  Create posts, fetch channels, upload media, and generate AI videos across 30+ networks — no code required.
+  <strong>🆕 NEW:</strong> the PostQueen <a href="https://www.npmjs.com/package/postqueen">Agent CLI</a> + <a href="https://docs.postqueen.ai">MCP server</a>: plug <b>Claude&nbsp;Code, ChatGPT, Cursor, OpenClaw, Hermes</b> or <b>Codex</b> straight into your channels.
 </p>
 
 <p align="center">
   <a href="https://postqueen.ai">Website</a> ·
-  <a href="https://app.postqueen.ai">Live App</a> ·
-  <a href="https://api.postqueen.ai/docs">API Reference</a> ·
+  <a href="https://postqueen.ai/pricing">Pricing</a> ·
+  <a href="https://app.postqueen.ai/auth">Start free</a> ·
   <a href="https://docs.postqueen.ai">Docs</a> ·
+  <a href="https://api.postqueen.ai/docs">API Reference</a> ·
   <a href="https://www.npmjs.com/package/n8n-nodes-postqueen">npm</a> ·
   <a href="https://www.npmjs.com/package/postqueen">CLI</a> ·
   <a href="https://www.npmjs.com/package/@postqueen/node">SDK</a>
@@ -28,13 +26,36 @@
   <a href="https://docs.n8n.io/integrations/community-nodes/"><img src="https://img.shields.io/badge/n8n-community%20node-ff6d5a" alt="n8n community node"></a>
 </p>
 
+<p align="center">
+  <img src=".github/assets/channels.svg" width="760" alt="Supported social networks" />
+</p>
+
 ---
 
-This is an [n8n community node](https://docs.n8n.io/integrations/community-nodes/) for [PostQueen](https://postqueen.ai), the open-source, AI-native social media scheduler. It lets you schedule and manage posts across 30+ social networks directly from your n8n workflows — for example: *load news from Reddit → turn it into a video with AI → publish it to all your channels.*
+## What is this?
 
-PostQueen supports X, LinkedIn, Bluesky, Instagram, Facebook, TikTok, YouTube, Pinterest, Dribbble, Telegram, Discord, Slack, Threads, Lemmy, Reddit, Mastodon, Farcaster, Nostr, VK, and more. Use it in the [cloud](https://app.postqueen.ai) or [self-host](https://docs.postqueen.ai/introduction) the whole stack.
+This is an [n8n community node](https://docs.n8n.io/integrations/community-nodes/) for [PostQueen](https://postqueen.ai), the open-source, AI-native social media scheduler. It lets you schedule and manage posts across **30+ social networks** directly from your n8n workflows. For example: load news from Reddit, turn it into a video with AI, then publish it to all your channels.
+
+PostQueen covers X, LinkedIn, Bluesky, Instagram, Facebook, TikTok, YouTube, Pinterest, Dribbble, Telegram, Discord, Slack, Threads, Lemmy, Reddit, Mastodon, Farcaster, Nostr, Tumblr, Moltbook, VK, and more. Run it in the cloud with a **[7-day free trial](https://postqueen.ai/pricing)**, or [self-host](https://docs.postqueen.ai/introduction) the whole stack for free.
 
 > This node is a fork of the [Postiz](https://github.com/gitroomhq/postiz-app) community node. Thanks to Nevo David and the Postiz contributors for the foundation this builds on.
+
+## 💬 Beyond n8n: talk to your AI
+
+Prefer plain English to nodes? PostQueen also plugs into the AI assistant you already use, so you can just ask:
+
+> *"Write a launch post about our new feature, generate a matching image, and schedule it for Friday at 9am on X, LinkedIn and Instagram."*
+
+Every post lands in your PostQueen queue for review before it goes live. Alongside this n8n node, PostQueen ships an **[Agent CLI](https://www.npmjs.com/package/postqueen)** and a hosted **[MCP server](https://docs.postqueen.ai)** that connect the agents you already talk to:
+
+<p align="center">
+  <a href="https://postqueen.ai/claude-code"><b>Claude Code</b></a> ·
+  <a href="https://postqueen.ai/chatgpt"><b>ChatGPT</b></a> ·
+  <a href="https://postqueen.ai/cursor"><b>Cursor</b></a> ·
+  <a href="https://postqueen.ai/openclaw"><b>OpenClaw</b></a> ·
+  <a href="https://postqueen.ai/hermes-agent"><b>Hermes</b></a> ·
+  <a href="https://postqueen.ai/codex"><b>Codex</b></a>
+</p>
 
 ## Installation
 
@@ -67,7 +88,7 @@ npm init -y
 npm install n8n-nodes-postqueen
 ```
 
-Then mount that folder into the container (host path → `/home/node/n8n-custom-nodes`) and point n8n at it:
+Then mount that folder into the container (host path to `/home/node/n8n-custom-nodes`) and point n8n at it:
 
 ```bash
 docker run -d --name n8n \
@@ -84,12 +105,12 @@ The node authenticates with a **PostQueen API** credential that has two fields:
 
 | Field | Description |
 | --- | --- |
-| **API Key** | Your PostQueen Public API key. Get it in the app under **Settings → Developers → Public API**. |
+| **API Key** | Your PostQueen Public API key. Grab it at **[app.postqueen.ai/settings](https://app.postqueen.ai/settings)** (Developers → Public API → Reveal). |
 | **Host** | Base URL of the PostQueen API. Defaults to `https://api.postqueen.ai` (cloud). |
 
 To add the credential in n8n, create a new **PostQueen API** credential, paste your API key, and (if self-hosting) set the host. n8n validates it against a live test endpoint when you save.
 
-> **Self-hosting note:** point **Host** at your own instance's API base URL. It must end with `/api` — for example `https://yourdomain.com/api`.
+> **Self-hosting note:** point **Host** at your own instance's API base URL. It must end with `/api`, for example `https://yourdomain.com/api`.
 
 ## Operations
 
@@ -105,14 +126,14 @@ The PostQueen node exposes 7 operations:
 | **Upload File** | Upload a file (image or video) from a binary property. |
 | **Video Function** | Run a video helper function, such as loading available voices. |
 
-**Generate Video** takes a **Video Type** (e.g. `image-text-slides`, `veo3`), an **Output Format** (`vertical` or `horizontal`), and optional **Custom Parameters** (key/value pairs such as `prompt`, `voice`, or `images`).
+**Generate Video** takes a **Video Type** (for example `image-text-slides` or `veo3`), an **Output Format** (`vertical` or `horizontal`), and optional **Custom Parameters** (key/value pairs such as `prompt`, `voice`, or `images`).
 
 ## Usage example
 
 A minimal "post to all channels now" flow:
 
-1. **Get Channels** — retrieve the IDs of your connected channels.
-2. **Create Post** — set **Type** to `Now`, add a post entry per channel using those IDs, and write your content.
+1. **Get Channels**: retrieve the IDs of your connected channels.
+2. **Create Post**: set **Type** to `Now`, add a post entry per channel using those IDs, and write your content.
 
 Run it, and PostQueen publishes across every selected network at once. Prefer raw HTTP or another language? See the [API reference](https://api.postqueen.ai/docs), the [`postqueen` CLI](https://www.npmjs.com/package/postqueen), or the [`@postqueen/node` SDK](https://www.npmjs.com/package/@postqueen/node).
 
