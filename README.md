@@ -35,6 +35,10 @@
   <a href="https://docs.n8n.io/integrations/community-nodes/"><img src="https://img.shields.io/badge/n8n-community%20node-ff6d5a" alt="n8n community node"></a>
 </p>
 
+<p align="center">
+  <a href="https://postqueen.ai"><img src=".github/assets/cta-cloud.svg" height="46" alt="Start free for 7 days" /></a>
+</p>
+
 <br/>
 
 <p align="center">
@@ -49,11 +53,9 @@
 
 <br/>
 
-> This node is a fork of the [Postiz](https://github.com/gitroomhq/postiz-app) community node. Thanks to Nevo David and the Postiz contributors for the foundation this builds on.
-
 ---
 
-## ✨ What is this?
+## 📖 What is this?
 
 This is an [n8n community node](https://docs.n8n.io/integrations/community-nodes/) for [PostQueen](https://postqueen.ai), the open-source, AI-native social media scheduler. It lets you schedule and manage posts across **30+ social networks** directly from your n8n workflows. For example: load news from Reddit, turn it into a video with AI, then publish it to all your channels.
 
@@ -61,22 +63,39 @@ PostQueen covers X, LinkedIn, Bluesky, Instagram, Facebook, TikTok, YouTube, Pin
 
 ---
 
-## 💬 Beyond n8n: talk to your AI
+## 👑 Everything PostQueen does for you
 
-Prefer plain English to nodes? PostQueen also plugs into the AI assistant you already use, so you can just ask:
+<p align="center">
+  <img src=".github/assets/features.svg" width="820" alt="PostQueen features: scheduling, AI assistant, AI design, AI video, auto actions, teamwork, analytics, marketplace" />
+</p>
+
+- 📅 **Scheduling.** Plan every channel on one visual calendar; drag to reschedule, click to edit.
+- 🤖 **AI Assistant.** Generate hooks, captions and threads in your voice, shaped per platform.
+- 🎨 **AI Design.** A built-in, Canva-like editor plus AI image generation for post visuals.
+- 🎬 **AI Video.** Turn a photo and a script into a short vertical video for Reels, Shorts and TikTok.
+- ⚡ **Auto Actions (Plugs).** Auto repost, like and comment when a post hits a milestone.
+- 👥 **Teamwork.** Roles, comments, approvals and multi-brand workspaces for your whole team.
+- 📈 **Analytics.** Track post and audience performance on the major networks.
+- 🛒 **Marketplace.** Buy or exchange posts with other members.
+
+---
+
+## 🤝 Works with your AI
+
+Prefer plain English to nodes? Alongside this n8n node, PostQueen ships an **[Agent CLI](https://postqueen.ai/agent)** and a hosted **[MCP server](https://postqueen.ai/mcp)**, so you can drive it from whatever AI you already talk to. Just ask:
 
 > *"Write a launch post about our new feature, generate a matching image, and schedule it for Friday at 9am on X, LinkedIn and Instagram."*
 
-Your assistant writes it, designs it, and drops it into your **PostQueen queue**, where you review and approve before anything goes live. Alongside this n8n node, PostQueen ships an **[Agent CLI](https://postqueen.ai/agent)** and a hosted **[MCP server](https://postqueen.ai/mcp)** that connect the agents you already talk to, plus any MCP client:
+Your assistant writes it, designs it, and drops it into your **PostQueen queue**, where you review and approve before anything goes live. Every agent below connects over the same CLI and MCP server:
 
-<p align="center">
-  <a href="https://postqueen.ai/claude-code"><b>Claude Code</b></a> &nbsp;·&nbsp;
-  <a href="https://postqueen.ai/chatgpt"><b>ChatGPT</b></a> &nbsp;·&nbsp;
-  <a href="https://postqueen.ai/cursor"><b>Cursor</b></a> &nbsp;·&nbsp;
-  <a href="https://postqueen.ai/openclaw"><b>OpenClaw</b></a> &nbsp;·&nbsp;
-  <a href="https://postqueen.ai/hermes-agent"><b>Hermes</b></a> &nbsp;·&nbsp;
-  <a href="https://postqueen.ai/codex"><b>Codex</b></a>
-</p>
+- **[Claude Code](https://postqueen.ai/claude-code):** tell it in plain English and it drives the CLI or MCP to draft and queue your posts.
+- **[ChatGPT](https://postqueen.ai/chatgpt):** draft in ChatGPT, then let PostQueen fan the result out to every channel.
+- **[Cursor](https://postqueen.ai/cursor):** manage your channels from the editor you build in, over the CLI or MCP.
+- **[OpenClaw](https://postqueen.ai/openclaw):** message it from WhatsApp, Telegram, Slack or Discord and it queues posts tailored per platform.
+- **[Hermes](https://postqueen.ai/hermes-agent):** hand your posting pipeline to an agent that plans multi-step tasks end to end.
+- **[Codex](https://postqueen.ai/codex):** one prompt in, a scheduled week out.
+
+Not on the list? PostQueen's CLI and MCP server are model-agnostic, so **any MCP client or command-running agent works**: Gemini CLI, Aider, Cline, Warp, Windsurf, or your own.
 
 ---
 
@@ -183,3 +202,5 @@ If this node saves you time, a ⭐ on the repo genuinely helps other people find
 ## License
 
 This node package is released under the [MIT license](LICENSE.md).
+
+This node is a fork of the [Postiz](https://github.com/gitroomhq/postiz-app) community node. Thanks to Nevo David and the Postiz contributors for the foundation this builds on.
