@@ -44,8 +44,6 @@ PostQueen supports X, LinkedIn, Bluesky, Instagram, Facebook, TikTok, YouTube, P
 3. Enter `n8n-nodes-postqueen` as the npm package name.
 4. Click **Install**.
 
-![community-node.png](community-node.png)
-
 ### npm (manual, non-Docker)
 
 Go to your n8n installation folder (usually `~/.n8n`). If there is no `custom` folder, create one with a `package.json`, then install the package:
