@@ -7,3 +7,6 @@ dist
 npm-debug.log*
 yarn.lock
 .vscode/launch.json
+
+# Backup written by scripts/npm-readme.js while packing
+.readme-github.bak

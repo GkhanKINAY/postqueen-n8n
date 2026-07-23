@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-postqueen",
-  "version": "0.2.19",
+  "version": "0.2.20",
   "description": "PostQueen community node for n8n (fork of n8n-nodes-postiz)",
   "keywords": [
     "social media",
@@ -28,6 +28,8 @@
     "lint": "eslint nodes credentials package.json",
     "lintfix": "eslint nodes credentials package.json --fix",
     "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json",
+    "prepack": "node scripts/npm-readme.js swap",
+    "postpack": "node scripts/npm-readme.js restore",
     "publish-n8n": "npm publish --access public"
   },
   "files": [
