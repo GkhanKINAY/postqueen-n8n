@@ -1,7 +1,7 @@
 {
   "name": "n8n-nodes-postqueen",
-  "version": "0.2.18",
-  "description": "PostQueen community node for n8n",
+  "version": "0.2.19",
+  "description": "PostQueen community node for n8n (fork of n8n-nodes-postiz)",
   "keywords": [
     "social media",
     "scheduling tool",
