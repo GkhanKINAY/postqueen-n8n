@@ -41,6 +41,10 @@
 
 ## 🔁 What you can build
 
+<p align="center">
+  <img src=".github/assets/n8n-flow.svg" width="620" alt="An n8n workflow: RSS trigger, AI caption, PostQueen Create Post, posts scheduled" />
+</p>
+
 A few workflows this node makes trivial:
 
 - An **RSS trigger** watches your blog, an AI node writes the caption for each new article, and **Create Post** schedules it to every channel at once.
