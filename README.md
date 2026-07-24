@@ -224,7 +224,7 @@ The node authenticates with a **PostQueen API** credential that has two fields:
 
 To add the credential in n8n, create a new **PostQueen API** credential, paste your API key, and (if self-hosting) set the host. n8n validates it against a live test endpoint when you save.
 
-> **Self-hosting note:** point **Host** at your own instance's API base URL. It must end with `/api`, for example `https://yourdomain.com/api`.
+> **Self-hosting note:** point **Host** at your own instance's API base URL. It must end with `/api`, for example `https://postqueen.example.com/api`.
 
 <br/>
 
