@@ -24,8 +24,12 @@
 </p>
 
 <p align="center">
-  <strong>This repo is her assembly line</strong> — the official n8n community node: every post and video your workflow produces, published to every channel, on autopilot.
+  <strong><a href="https://postqueen.ai">PostQueen</a></strong> is the open-source alternative to <strong>Buffer, Hootsuite, Sprout Social</strong> and <strong>Later</strong>.
 </p>
+
+<br/>
+
+<p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
 
 <br/>
 
@@ -49,8 +53,10 @@
 <br/>
 
 <p align="center">
+  <!-- CHANNEL ICONS: 30 individual imgs, natural flow, mobile-wrap -->
   <img src=".github/assets/channels/instagram.svg" height="44" alt="Instagram" /> <img src=".github/assets/channels/youtube.svg" height="44" alt="YouTube" /> <img src=".github/assets/channels/google-business.svg" height="44" alt="Google Business Profile" /> <img src=".github/assets/channels/dribbble.svg" height="44" alt="Dribbble" /> <img src=".github/assets/channels/linkedin.svg" height="44" alt="LinkedIn" /> <img src=".github/assets/channels/reddit.svg" height="44" alt="Reddit" /> <img src=".github/assets/channels/tiktok.svg" height="44" alt="TikTok" /> <img src=".github/assets/channels/facebook.svg" height="44" alt="Facebook" /> <img src=".github/assets/channels/pinterest.svg" height="44" alt="Pinterest" /> <img src=".github/assets/channels/threads.svg" height="44" alt="Threads" /> <img src=".github/assets/channels/x.svg" height="44" alt="X" /> <img src=".github/assets/channels/slack.svg" height="44" alt="Slack" /> <img src=".github/assets/channels/discord.svg" height="44" alt="Discord" /> <img src=".github/assets/channels/mastodon.svg" height="44" alt="Mastodon" /> <img src=".github/assets/channels/bluesky.svg" height="44" alt="Bluesky" /> <img src=".github/assets/channels/lemmy.svg" height="44" alt="Lemmy" /> <img src=".github/assets/channels/warpcast.svg" height="44" alt="Farcaster" /> <img src=".github/assets/channels/telegram.svg" height="44" alt="Telegram" /> <img src=".github/assets/channels/nostr.svg" height="44" alt="Nostr" /> <img src=".github/assets/channels/vk.svg" height="44" alt="VK" /> <img src=".github/assets/channels/devto.svg" height="44" alt="Dev.to" /> <img src=".github/assets/channels/medium.svg" height="44" alt="Medium" /> <img src=".github/assets/channels/hashnode.svg" height="44" alt="Hashnode" /> <img src=".github/assets/channels/wordpress.svg" height="44" alt="WordPress" /> <img src=".github/assets/channels/whop.svg" height="44" alt="Whop" /> <img src=".github/assets/channels/kick.svg" height="44" alt="Kick" /> <img src=".github/assets/channels/mewe.svg" height="44" alt="MeWe" /> <img src=".github/assets/channels/twitch.svg" height="44" alt="Twitch" /> <img src=".github/assets/channels/listmonk.svg" height="44" alt="Listmonk" /> <img src=".github/assets/channels/skool.svg" height="44" alt="Skool" />
 </p>
+
 
 <br/>
 
@@ -78,9 +84,7 @@
 
 <br/>
 
-<p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
-
-<br/>
+---
 
 ## 🔁 What you can build
 
@@ -265,16 +269,36 @@ The node talks to the same public API as the [CLI](https://www.npmjs.com/package
 
 <br/>
 
+## 🦞 Meet her open agents: OpenClaw &amp; Hermes
+
+The two open-source agents everyone is running right now both speak PostQueen natively. **OpenClaw** lives on your machine and answers you from any chat app. **Hermes** does that too — and give it one brief, it plans your whole week on its own. Both drive the same `postqueen` CLI.
+
+<p align="center">
+  <img src=".github/assets/open-agents.svg" width="660" alt="OpenClaw and Hermes running PostQueen: chat apps feed OpenClaw, a one-line brief feeds Hermes, both drive the postqueen CLI and posts land on the calendar" />
+</p>
+
+<a href="https://postqueen.ai/openclaw"><img src=".github/assets/spotlight-openclaw.svg" width="410" alt="OpenClaw: runs on your machine; message her from WhatsApp, Telegram, Slack or Discord — set-up guide" /></a> <a href="https://postqueen.ai/hermes-agent"><img src=".github/assets/spotlight-hermes.svg" width="410" alt="Hermes: the self-improving autonomous agent; one brief becomes a planned, verified week — set-up guide" /></a>
+
+**Any other agent works too** — anything that can run a CLI command or call MCP can run your socials. [Agent guide »](https://postqueen.ai/agent)
+
+<br/>
+
+---
+
 ## 🚀 Get started in minutes
 
-The node needs a PostQueen instance to talk to — either lane works, and the node cannot tell the difference.
+<br/>
+
+<p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
+
+<br/>
 
 ### ☁️ Cloud, the fast lane
 
-Nothing to run: sign up, connect your channels, grab your API key at [app.postqueen.ai/settings](https://app.postqueen.ai/settings) (Developers → Public API → Reveal) and leave **Host** at its default `https://api.postqueen.ai`. Free for 7 days.
+Skip the setup entirely. Create an account, connect your channels, and schedule your first post today: **7-day free trial**, nothing to install, nothing to run.
 
 <p align="center">
-  <a href="https://postqueen.ai"><img src=".github/assets/cta-cloud.svg" height="44" alt="Start free for 7 days" /></a>
+  <a href="https://postqueen.ai"><img src=".github/assets/cta-cloud.svg" height="52" alt="Start free for 7 days" /></a>
 </p>
 
 <br/>
@@ -285,35 +309,34 @@ Nothing to run: sign up, connect your channels, grab your API key at [app.postqu
 
 ### 🐳 Self-host, the free lane
 
-Run the whole stack on your own server with [postqueen-docker-compose](https://github.com/GkhanKINAY/postqueen-docker-compose), then point **Host** at your instance — it must end with `/api`, for example `https://yourdomain.com/api`. Your API key lives on the same screen of your own instance: Settings → Developers → Public API.
+Your server. Your keys. Your audience. The whole stack runs on your machine with Docker:
+
+```bash
+git clone https://github.com/GkhanKINAY/postqueen-docker-compose
+cd postqueen-docker-compose
+# set a unique JWT_SECRET and your public URLs in docker-compose.yaml
+docker compose up -d          # then open http://localhost:4007
+```
 
 <p align="center">
-  <a href="https://github.com/GkhanKINAY/postqueen-docker-compose"><img src=".github/assets/cta-selfhost.svg" height="44" alt="Self-host it free" /></a>
+  <img src=".github/assets/compose-up.svg" width="620" alt="docker compose up: the PostQueen stack starts and is ready on localhost 4007" />
 </p>
 
-<br/>
+You will need Docker, about 4 GB of RAM, and for connecting real social accounts a public HTTPS domain behind a reverse proxy (the networks send their OAuth callbacks there). The stack ships the app, PostgreSQL, Redis and Temporal.
 
-<p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
-
-<br/>
-
-## ❤️ Community and support
-
-- 🐛 **Found a bug or have an idea?** [Open an issue](https://github.com/GkhanKINAY/postqueen-n8n/issues).
-- 💌 **Need a hand?** Email **support@postqueen.ai**.
-- 📚 **Getting started?** The [docs](https://docs.postqueen.ai) walk you through everything.
-
-If PostQueen saves you time, a ⭐ on the repo genuinely helps other people find it.
+Full walkthrough: [self-host guide](https://docs.postqueen.ai/installation/docker-compose) &nbsp;·&nbsp; Kubernetes: [postqueen-helmchart](https://github.com/GkhanKINAY/postqueen-helmchart) &nbsp;·&nbsp; every setting: [configuration reference](https://docs.postqueen.ai/configuration/reference)
 
 <br/>
 
-<p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
-
-<br/>
+---
 
 ## 🌐 Publish everywhere
 
-One **Create Post**, 30+ networks:
+Write once, be everywhere. PostQueen publishes to **30+ networks** out of the box:
+
+<p align="center">
+  <img src=".github/assets/channels/instagram.svg" height="44" alt="Instagram" /> <img src=".github/assets/channels/youtube.svg" height="44" alt="YouTube" /> <img src=".github/assets/channels/google-business.svg" height="44" alt="Google Business Profile" /> <img src=".github/assets/channels/dribbble.svg" height="44" alt="Dribbble" /> <img src=".github/assets/channels/linkedin.svg" height="44" alt="LinkedIn" /> <img src=".github/assets/channels/reddit.svg" height="44" alt="Reddit" /> <img src=".github/assets/channels/tiktok.svg" height="44" alt="TikTok" /> <img src=".github/assets/channels/facebook.svg" height="44" alt="Facebook" /> <img src=".github/assets/channels/pinterest.svg" height="44" alt="Pinterest" /> <img src=".github/assets/channels/threads.svg" height="44" alt="Threads" /> <img src=".github/assets/channels/x.svg" height="44" alt="X" /> <img src=".github/assets/channels/slack.svg" height="44" alt="Slack" /> <img src=".github/assets/channels/discord.svg" height="44" alt="Discord" /> <img src=".github/assets/channels/mastodon.svg" height="44" alt="Mastodon" /> <img src=".github/assets/channels/bluesky.svg" height="44" alt="Bluesky" /> <img src=".github/assets/channels/lemmy.svg" height="44" alt="Lemmy" /> <img src=".github/assets/channels/warpcast.svg" height="44" alt="Farcaster" /> <img src=".github/assets/channels/telegram.svg" height="44" alt="Telegram" /> <img src=".github/assets/channels/nostr.svg" height="44" alt="Nostr" /> <img src=".github/assets/channels/vk.svg" height="44" alt="VK" /> <img src=".github/assets/channels/devto.svg" height="44" alt="Dev.to" /> <img src=".github/assets/channels/medium.svg" height="44" alt="Medium" /> <img src=".github/assets/channels/hashnode.svg" height="44" alt="Hashnode" /> <img src=".github/assets/channels/wordpress.svg" height="44" alt="WordPress" /> <img src=".github/assets/channels/whop.svg" height="44" alt="Whop" /> <img src=".github/assets/channels/kick.svg" height="44" alt="Kick" /> <img src=".github/assets/channels/mewe.svg" height="44" alt="MeWe" /> <img src=".github/assets/channels/twitch.svg" height="44" alt="Twitch" /> <img src=".github/assets/channels/listmonk.svg" height="44" alt="Listmonk" /> <img src=".github/assets/channels/skool.svg" height="44" alt="Skool" />
+</p>
 
 | Category | Networks |
 | --- | --- |
@@ -327,9 +350,29 @@ LinkedIn and Instagram each support both personal and page posting. New connecto
 
 <br/>
 
-<p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
+---
+
+## ❤️ Community and support
+
+- 🐛 **Found a bug or have an idea?** [Open an issue](https://github.com/GkhanKINAY/postqueen-n8n/issues).
+- 💌 **Need a hand?** Email **support@postqueen.ai**.
+- 📚 **Getting started?** The [docs](https://docs.postqueen.ai) walk you through everything.
+
+If PostQueen saves you time, a ⭐ on the repo genuinely helps other people find it.
 
 <br/>
+
+---
+
+## 🙏 Thank you, Postiz
+
+PostQueen is a fork of [Postiz](https://github.com/gitroomhq/postiz-app) by Nevo David, released under AGPL-3.0. Postiz gave us a rock-solid open-source scheduler: the connectors, the calendar, the Temporal pipeline, years of careful work that we did not have to redo. We forked it because we wanted to take that foundation in a specific direction, a social media manager you talk to instead of operate, and building on Postiz let us start from something that already worked.
+
+Thank you, Nevo David and every Postiz contributor. This project exists because you chose to open-source yours. If PostQueen is not quite what you need, [Postiz](https://postiz.com) itself might be, and it deserves your star too. 🙏
+
+<br/>
+
+---
 
 ## 👑 The PostQueen ecosystem
 
@@ -344,7 +387,17 @@ LinkedIn and Instagram each support both personal and page posting. New connecto
 
 On npm: [`postqueen`](https://www.npmjs.com/package/postqueen) (CLI) · [`@postqueen/node`](https://www.npmjs.com/package/@postqueen/node) (SDK) · [`n8n-nodes-postqueen`](https://www.npmjs.com/package/n8n-nodes-postqueen) (n8n)
 
-PostQueen is a fork of [Postiz](https://github.com/gitroomhq/postiz-app) by Nevo David, released under AGPL-3.0. Thank you, Nevo David and every Postiz contributor: this project exists because you open-sourced yours. The full story is in the [main README](https://github.com/GkhanKINAY/postqueen-app#-thank-you-postiz).
+<br/>
+
+<p align="center">
+  <strong>Long live the queen.</strong> 👑
+</p>
+
+<p align="center">
+  <a href="https://postqueen.ai"><img src=".github/assets/cta-cloud.svg" height="52" alt="Start free for 7 days" /></a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/GkhanKINAY/postqueen-docker-compose"><img src=".github/assets/cta-selfhost.svg" height="52" alt="Self-host it free" /></a>
+</p>
 
 ## License
 
