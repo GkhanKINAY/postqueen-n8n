@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  The official n8n community node: wire PostQueen into any workflow and let it draft, schedule and publish to 30+ networks without writing code.
+  The official n8n community node: wire PostQueen into any workflow and let it draft, schedule and publish to 30+ networks without writing code. Nobody wakes up wanting a scheduler — people want views, subscribers and sales. This node is how n8n builders get them: every post and video, on every channel, on time, on autopilot.
 </p>
 
 <br/>
@@ -41,7 +41,15 @@
 
 ## 🔁 What you can build
 
-Five workflows this node makes trivial — every PostQueen step below is a real operation of the node, and any n8n trigger (Schedule, RSS, Webhook, Google Sheets, a form) can start them.
+Seven workflows this node makes trivial — every PostQueen step below is a real operation of the node, and any n8n trigger (Schedule, RSS, Webhook, Google Sheets, a form) can start them.
+
+### 🌐 Write once, publish everywhere
+
+The core move: whatever your workflow produces — an AI draft, an RSS item, a row from a sheet — one **Create Post** schedules and publishes it to every channel you have, in a single step. X, Instagram, TikTok, YouTube, LinkedIn, Facebook, Threads, Discord, Bluesky and 20+ more.
+
+<p align="center">
+  <img src=".github/assets/flow-everywhere.svg" width="620" alt="An n8n workflow: any content source, PostQueen Create Post, published to every social channel at once" />
+</p>
 
 ### 📰 Blog on autopilot
 
@@ -73,6 +81,14 @@ A **form submission** or a new product row landing in a sheet kicks off a multi-
 
 <p align="center">
   <img src=".github/assets/flow-launch.svg" width="620" alt="An n8n workflow: a new sheet row, PostQueen Get Channels, PostQueen Create Post to every channel" />
+</p>
+
+### ♻️ Evergreen recycler
+
+Every Friday, **Get Posts** pulls your archive, an AI node picks the winners, and **Create Post** re-queues the evergreen ones — your best content keeps working without anyone touching it.
+
+<p align="center">
+  <img src=".github/assets/flow-recycle.svg" width="620" alt="An n8n workflow: every Friday PostQueen Get Posts pulls the archive and Create Post re-queues the best evergreen posts" />
 </p>
 
 ### 🛡️ Queue guard

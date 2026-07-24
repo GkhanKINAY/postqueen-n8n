@@ -107,11 +107,11 @@ Format** (`vertical` or `horizontal`), and optional **Custom Parameters** (key/v
 
 Every PostQueen step below is a real operation of this node; any n8n trigger can start the flow.
 
-**Grow a YouTube channel while you sleep** — a daily Schedule Trigger runs **Generate Video**
-(`veo3` or `image-text-slides`, with your prompt and optionally a voice from **Video Function** →
-`loadVoices`), then **Create Post** queues the finished video to your channel:
+**Write once, publish everywhere** — whatever your workflow produces (an AI draft, an RSS item, a
+sheet row), one **Create Post** schedules and publishes it to every channel you have in a single
+step:
 
-![n8n workflow: schedule trigger, PostQueen Generate Video, PostQueen Create Post to YouTube](https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/.github/assets/flow-youtube.svg)
+![n8n workflow: any content source, PostQueen Create Post, published to every social channel at once](https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/.github/assets/flow-everywhere.svg)
 
 **One clip → TikTok, Reels and Shorts** — a new video file in Drive/Dropbox/S3 triggers
 **Upload File**, and **Create Post** schedules the same clip to TikTok, Instagram and YouTube in one
