@@ -37,15 +37,25 @@
   <a href="https://docs.n8n.io/integrations/community-nodes/"><img src="https://img.shields.io/badge/n8n-community%20node-ff6d5a" alt="n8n community node"></a>
 </p>
 
----
+<br/>
+
+<p align="center">
+  <img src=".github/assets/channels/instagram.svg" height="44" alt="Instagram" /> <img src=".github/assets/channels/youtube.svg" height="44" alt="YouTube" /> <img src=".github/assets/channels/google-business.svg" height="44" alt="Google Business Profile" /> <img src=".github/assets/channels/dribbble.svg" height="44" alt="Dribbble" /> <img src=".github/assets/channels/linkedin.svg" height="44" alt="LinkedIn" /> <img src=".github/assets/channels/reddit.svg" height="44" alt="Reddit" /> <img src=".github/assets/channels/tiktok.svg" height="44" alt="TikTok" /> <img src=".github/assets/channels/facebook.svg" height="44" alt="Facebook" /> <img src=".github/assets/channels/pinterest.svg" height="44" alt="Pinterest" /> <img src=".github/assets/channels/threads.svg" height="44" alt="Threads" /> <img src=".github/assets/channels/x.svg" height="44" alt="X" /> <img src=".github/assets/channels/slack.svg" height="44" alt="Slack" /> <img src=".github/assets/channels/discord.svg" height="44" alt="Discord" /> <img src=".github/assets/channels/mastodon.svg" height="44" alt="Mastodon" /> <img src=".github/assets/channels/bluesky.svg" height="44" alt="Bluesky" /> <img src=".github/assets/channels/lemmy.svg" height="44" alt="Lemmy" /> <img src=".github/assets/channels/warpcast.svg" height="44" alt="Farcaster" /> <img src=".github/assets/channels/telegram.svg" height="44" alt="Telegram" /> <img src=".github/assets/channels/nostr.svg" height="44" alt="Nostr" /> <img src=".github/assets/channels/vk.svg" height="44" alt="VK" /> <img src=".github/assets/channels/devto.svg" height="44" alt="Dev.to" /> <img src=".github/assets/channels/medium.svg" height="44" alt="Medium" /> <img src=".github/assets/channels/hashnode.svg" height="44" alt="Hashnode" /> <img src=".github/assets/channels/wordpress.svg" height="44" alt="WordPress" /> <img src=".github/assets/channels/whop.svg" height="44" alt="Whop" /> <img src=".github/assets/channels/kick.svg" height="44" alt="Kick" /> <img src=".github/assets/channels/mewe.svg" height="44" alt="MeWe" /> <img src=".github/assets/channels/twitch.svg" height="44" alt="Twitch" /> <img src=".github/assets/channels/listmonk.svg" height="44" alt="Listmonk" /> <img src=".github/assets/channels/skool.svg" height="44" alt="Skool" />
+</p>
+
+<br/>
+
+<p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
+
+<br/>
 
 ## 🔁 What you can build
 
 Seven workflows this node makes trivial — every PostQueen step below is a real operation of the node, and any n8n trigger (Schedule, RSS, Webhook, Google Sheets, a form) can start them.
 
-### 🌐 Write once, publish everywhere
+### 🌐 One post, every channel
 
-The core move: whatever your workflow produces — an AI draft, an RSS item, a row from a sheet — one **Create Post** schedules and publishes it to every channel you have, in a single step. X, Instagram, TikTok, YouTube, LinkedIn, Facebook, Threads, Discord, Bluesky and 20+ more.
+You (or any n8n node) write the content — PostQueen does the publishing. An AI draft, an RSS item, a row from a sheet: one **Create Post** schedules and publishes it to every channel you have, in a single step.
 
 <p align="center">
   <img src=".github/assets/flow-everywhere.svg" width="620" alt="An n8n workflow: any content source, PostQueen Create Post, published to every social channel at once" />
@@ -99,7 +109,11 @@ Every Monday, **Get Posts** pulls the next seven days of your calendar; if the q
   <img src=".github/assets/flow-guard.svg" width="620" alt="An n8n workflow: every Monday PostQueen Get Posts checks the week and Slack alerts you if the queue is empty" />
 </p>
 
----
+<br/>
+
+<p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
+
+<br/>
 
 ## 📦 Installation
 
@@ -145,7 +159,11 @@ docker run -d --name n8n \
 
 Requires n8n running on Node.js **>=20.15**.
 
----
+<br/>
+
+<p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
+
+<br/>
 
 ## 🔑 Credentials
 
@@ -160,19 +178,11 @@ To add the credential in n8n, create a new **PostQueen API** credential, paste y
 
 > **Self-hosting note:** point **Host** at your own instance's API base URL. It must end with `/api`, for example `https://yourdomain.com/api`.
 
-### ☁️ Cloud or 🐳 self-host — both work
+<br/>
 
-| | ☁️ **PostQueen Cloud** | 🐳 **Self-hosted PostQueen** |
-| --- | --- | --- |
-| **Host** | `https://api.postqueen.ai` (the default) | `https://yourdomain.com/api` — must end with `/api` |
-| **API Key** | [app.postqueen.ai/settings](https://app.postqueen.ai/settings) → Developers → Public API → Reveal | same screen on your own instance: Settings → Developers → Public API |
-| **Get started** | free for 7 days, no card | [`docker compose up`](https://github.com/GkhanKINAY/postqueen-docker-compose) and you are live |
+<p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
 
-<p align="center">
-  <a href="https://postqueen.ai"><img src=".github/assets/cta-cloud.svg" height="44" alt="Start free in the cloud" /></a>&nbsp;&nbsp;<a href="https://github.com/GkhanKINAY/postqueen-docker-compose"><img src=".github/assets/cta-selfhost.svg" height="44" alt="Self-host with Docker" /></a>
-</p>
-
----
+<br/>
 
 ## ⚙️ Operations
 
@@ -190,19 +200,53 @@ The PostQueen node exposes 7 operations:
 
 **Generate Video** takes a **Video Type** (for example `image-text-slides` or `veo3`), an **Output Format** (`vertical` or `horizontal`), and optional **Custom Parameters** (key/value pairs such as `prompt`, `voice`, or `images`).
 
----
+<br/>
+
+<p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
+
+<br/>
 
 ## 🤝 Works with the rest of the platform
 
 The node talks to the same public API as the [CLI](https://www.npmjs.com/package/postqueen), the [SDK](https://www.npmjs.com/package/@postqueen/node) and the [MCP server](https://postqueen.ai/mcp), so whatever you automate here plays nicely with whatever your AI assistant does through [postqueen-agent](https://github.com/GkhanKINAY/postqueen-agent). The full API is browsable in the [Swagger reference](https://api.postqueen.ai/docs) and explained in the [public API docs](https://docs.postqueen.ai/public-api/introduction). Make.com and Zapier can call the same API directly, no node required.
 
----
+<br/>
 
-## 🐳 Need an instance?
+<p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
 
-The node needs a PostQueen instance to talk to. Easiest is the cloud: sign up at [postqueen.ai](https://postqueen.ai) for a 7-day free trial with nothing to run yourself, or self-host the whole stack for free with [postqueen-docker-compose](https://github.com/GkhanKINAY/postqueen-docker-compose).
+<br/>
 
----
+## 🚀 Get started in minutes
+
+The node needs a PostQueen instance to talk to — either lane works, and the node cannot tell the difference.
+
+### ☁️ Cloud, the fast lane
+
+Nothing to run: sign up, connect your channels, grab your API key at [app.postqueen.ai/settings](https://app.postqueen.ai/settings) (Developers → Public API → Reveal) and leave **Host** at its default `https://api.postqueen.ai`. Free for 7 days.
+
+<p align="center">
+  <a href="https://postqueen.ai"><img src=".github/assets/cta-cloud.svg" height="44" alt="Start free for 7 days" /></a>
+</p>
+
+<br/>
+
+<p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
+
+<br/>
+
+### 🐳 Self-host, the free lane
+
+Run the whole stack on your own server with [postqueen-docker-compose](https://github.com/GkhanKINAY/postqueen-docker-compose), then point **Host** at your instance — it must end with `/api`, for example `https://yourdomain.com/api`. Your API key lives on the same screen of your own instance: Settings → Developers → Public API.
+
+<p align="center">
+  <a href="https://github.com/GkhanKINAY/postqueen-docker-compose"><img src=".github/assets/cta-selfhost.svg" height="44" alt="Self-host it free" /></a>
+</p>
+
+<br/>
+
+<p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
+
+<br/>
 
 ## ❤️ Community and support
 
@@ -212,7 +256,11 @@ The node needs a PostQueen instance to talk to. Easiest is the cloud: sign up at
 
 If PostQueen saves you time, a ⭐ on the repo genuinely helps other people find it.
 
----
+<br/>
+
+<p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
+
+<br/>
 
 ## 👑 The PostQueen ecosystem
 

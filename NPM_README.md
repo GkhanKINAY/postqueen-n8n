@@ -78,11 +78,14 @@ host. n8n validates it against a live endpoint when you save.
 
 ### Cloud or self-host — both work
 
-| | ☁️ PostQueen Cloud | 🐳 Self-hosted PostQueen |
-| --- | --- | --- |
-| **Host** | `https://api.postqueen.ai` (the default) | `https://yourdomain.com/api` — must end with `/api` |
-| **API Key** | [app.postqueen.ai/settings](https://app.postqueen.ai/settings) → Developers → Public API | same screen on your own instance |
-| **Get started** | [postqueen.ai](https://postqueen.ai) — free for 7 days | [docker compose](https://github.com/GkhanKINAY/postqueen-docker-compose) |
+**☁️ Cloud:** leave **Host** at the default `https://api.postqueen.ai` and grab your key at
+[app.postqueen.ai/settings](https://app.postqueen.ai/settings) (Developers → Public API → Reveal).
+Free for 7 days at [postqueen.ai](https://postqueen.ai).
+
+**🐳 Self-host:** run the stack with
+[postqueen-docker-compose](https://github.com/GkhanKINAY/postqueen-docker-compose) and point
+**Host** at your instance — it must end with `/api` (for example `https://yourdomain.com/api`).
+Your key lives on the same screen of your own instance.
 
 ## Operations
 
@@ -107,9 +110,9 @@ Format** (`vertical` or `horizontal`), and optional **Custom Parameters** (key/v
 
 Every PostQueen step below is a real operation of this node; any n8n trigger can start the flow.
 
-**Write once, publish everywhere** — whatever your workflow produces (an AI draft, an RSS item, a
-sheet row), one **Create Post** schedules and publishes it to every channel you have in a single
-step:
+**One post, every channel** — you (or any n8n node) write the content, PostQueen does the
+publishing: an AI draft, an RSS item or a sheet row goes out to every channel you have in a
+single **Create Post** step:
 
 ![n8n workflow: any content source, PostQueen Create Post, published to every social channel at once](https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/.github/assets/flow-everywhere.svg)
 
