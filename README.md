@@ -19,15 +19,12 @@
 </p>
 
 <p align="center">
+  <strong>Views on autopilot. Posts every day. Launches everywhere.</strong><br/>
+  <em>All while you do your actual job.</em>
+</p>
+
+<p align="center">
   <strong>This repo is her assembly line</strong> — the official n8n community node: every post and video your workflow produces, published to every channel, on autopilot.
-</p>
-
-<p align="center">
-  <strong>Free for 7 days in the cloud. Forever free on your own server.</strong>
-</p>
-
-<p align="center">
-  <a href="https://postqueen.ai"><img src=".github/assets/cta-cloud.svg" height="44" alt="Start free for 7 days" /></a>&nbsp;&nbsp;<a href="https://github.com/GkhanKINAY/postqueen-docker-compose"><img src=".github/assets/cta-selfhost.svg" height="44" alt="Self-host it free" /></a>
 </p>
 
 <br/>
@@ -57,10 +54,26 @@
 
 <br/>
 
+<p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
+
+<br/>
+
 <h3 align="center">Schedule and generate posts with AI</h3>
 
 <p align="center">
   <img src=".github/assets/calendar.svg" width="660" alt="The PostQueen calendar: a week of posts across your channels, with AI generation and drag to reschedule" />
+</p>
+
+<br/>
+
+<p align="center">
+  <strong>Free for 7 days in the cloud. Forever free on your own server.</strong>
+</p>
+
+<p align="center">
+  <a href="https://postqueen.ai"><img src=".github/assets/cta-cloud.svg" height="52" alt="Start free for 7 days" /></a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/GkhanKINAY/postqueen-docker-compose"><img src=".github/assets/cta-selfhost.svg" height="52" alt="Self-host it free" /></a>
 </p>
 
 <br/>
