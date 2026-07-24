@@ -269,6 +269,41 @@ The node talks to the same public API as the [CLI](https://www.npmjs.com/package
 
 <br/>
 
+## ⚙️ How she works
+
+```mermaid
+flowchart TD
+    A["🧑 You<br/>(or your AI assistant)"] -->|MCP · CLI · API · n8n| B["👑 PostQueen"]
+    B --> C["📅 Your calendar<br/>review · edit · approve drafts"]
+    C --> D["⏰ Temporal scheduler<br/>publishes on time, retries on failure"]
+    D --> E["🌐 30+ networks"]
+```
+
+1. **Say it once.** From the app, WhatsApp, your terminal or ChatGPT.
+2. **She does the work.** Research, platform-specific copy, and an image or video to match.
+3. **You get the final word.** Everything waits on your calendar: edit it, delete it, or keep drafts until you approve them.
+4. **It goes out on time.** A [Temporal](https://temporal.io) workflow engine fires every post exactly when planned, with automatic retries, and refreshes your platform tokens in the background.
+
+Curious about the internals? Read [how it works](https://docs.postqueen.ai/howitworks) in the docs.
+
+<br/>
+
+---
+
+## 🌙 An agent that works while you sleep
+
+Agents like **Hermes** and **OpenClaw** can run on a schedule, not just on demand. A small recurring job wakes up every morning, checks yesterday's numbers with `analytics:platform`, and drafts today's post before you have had coffee. Every PostQueen action is a CLI command or an MCP call with clean JSON output, so any agent that can run a command can run your social media.
+
+<p align="center">
+  <img src=".github/assets/nightshift.svg" width="620" alt="At 4 AM the agent wakes up, checks yesterday's numbers and drafts today's post; it waits on your calendar for 9 AM" />
+</p>
+
+**Any other agent works too:** Gemini CLI, Aider, Cline, Warp, Windsurf, or your own scripts. Start from the [Agent guide](https://postqueen.ai/agent) or the [MCP guide](https://postqueen.ai/mcp), and see the full command reference in [postqueen-agent](https://github.com/GkhanKINAY/postqueen-agent).
+
+<br/>
+
+---
+
 ## 🦞 Meet her open agents: OpenClaw &amp; Hermes
 
 The two open-source agents everyone is running right now both speak PostQueen natively. **OpenClaw** lives on your machine and answers you from any chat app. **Hermes** does that too — and give it one brief, it plans your whole week on its own. Both drive the same `postqueen` CLI.
@@ -347,6 +382,19 @@ Write once, be everywhere. PostQueen publishes to **30+ networks** out of the bo
 | **Creator and business** | Google Business Profile, Whop, Skool, Dribbble |
 
 LinkedIn and Instagram each support both personal and page posting. New connectors ship regularly: see the full list with per-network guides at [postqueen.ai/channels](https://postqueen.ai/channels).
+
+<br/>
+
+---
+
+## 🛡️ Compliance
+
+- PostQueen is an open-source, self-hostable social media scheduler that supports X, LinkedIn, Instagram, Bluesky, Mastodon, Discord and 30+ more.
+- The hosted service uses official, platform-approved OAuth flows.
+- PostQueen does not automate or scrape content from social media platforms.
+- PostQueen does not collect, store, or proxy API keys or access tokens from users.
+- PostQueen never asks users to paste social-platform credentials into the hosted product.
+- Users always authenticate directly with each platform (X, LinkedIn, Discord, and so on), which keeps every platform's compliance and your data privacy intact.
 
 <br/>
 
