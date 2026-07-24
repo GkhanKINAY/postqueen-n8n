@@ -13,10 +13,10 @@
 
 # n8n-nodes-postqueen
 
-An [n8n](https://n8n.io) community node for [PostQueen](https://postqueen.ai), the AI social media
-assistant. Drop it into a workflow to schedule, draft or publish posts to X/Twitter, LinkedIn,
-Instagram, Facebook, TikTok, YouTube, Reddit, Bluesky, Mastodon, Discord and 30+ more networks —
-plus upload media and generate videos with AI, no code required.
+An [n8n](https://n8n.io) community node for [PostQueen](https://postqueen.ai), your AI social media
+manager. Drop it into a workflow and the publishing runs itself: posts scheduled, drafted or sent
+live to 30+ networks, from X and LinkedIn to TikTok and YouTube, with media uploads and AI video
+generation built in. No code required.
 
 ## Installation
 
@@ -76,7 +76,7 @@ host. n8n validates it against a live endpoint when you save.
 > **Self-hosting note:** point **Host** at your own instance's API base URL. It must end with
 > `/api`, for example `https://yourdomain.com/api`.
 
-### Cloud or self-host — both work
+### Cloud or self-host: both work
 
 **☁️ Cloud:** leave **Host** at the default `https://api.postqueen.ai` and grab your key at
 [app.postqueen.ai/settings](https://app.postqueen.ai/settings) (Developers → Public API → Reveal).
@@ -84,7 +84,7 @@ Free for 7 days at [postqueen.ai](https://postqueen.ai).
 
 **🐳 Self-host:** run the stack with
 [postqueen-docker-compose](https://github.com/GkhanKINAY/postqueen-docker-compose) and point
-**Host** at your instance — it must end with `/api` (for example `https://yourdomain.com/api`).
+**Host** at your instance; it must end with `/api` (for example `https://yourdomain.com/api`).
 Your key lives on the same screen of your own instance.
 
 ## Operations
@@ -110,21 +110,21 @@ Format** (`vertical` or `horizontal`), and optional **Custom Parameters** (key/v
 
 Every PostQueen step below is a real operation of this node; any n8n trigger can start the flow.
 
-**One post, every channel** — you (or any n8n node) write the content, PostQueen does the
+**One post, every channel.** You (or any n8n node) write the content and PostQueen does the
 publishing: an AI draft, an RSS item or a sheet row goes out to every channel you have in a
 single **Create Post** step:
 
 ![n8n workflow: any content source, PostQueen Create Post, published to every social channel at once](https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/.github/assets/flow-everywhere.svg)
 
-**One clip → TikTok, Reels and Shorts** — a new video file in Drive/Dropbox/S3 triggers
+**One clip → TikTok, Reels and Shorts.** A new video file in Drive, Dropbox or S3 triggers
 **Upload File**, and **Create Post** schedules the same clip to TikTok, Instagram and YouTube in one
-go. Upload media first and pass the returned URL into the post — TikTok, Instagram and YouTube only
+go. Upload media first and pass the returned URL into the post; TikTok, Instagram and YouTube only
 accept media from trusted domains:
 
 ![n8n workflow: a new video file, PostQueen Upload File, PostQueen Create Post to TikTok, Reels and Shorts](https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/.github/assets/flow-clips.svg)
 
-**Launch-day announcement blast** — a form submission or a new sheet row kicks off a multi-channel
-announcement: **Get Channels** finds your accounts, **Create Post** does the rest:
+**Launch-day announcement blast.** A form submission or a new sheet row kicks off the announcement:
+**Get Channels** finds your accounts and **Create Post** tells all of them at once:
 
 ![n8n workflow: a new sheet row, PostQueen Get Channels, PostQueen Create Post to every channel](https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/.github/assets/flow-launch.svg)
 
@@ -146,5 +146,5 @@ Requires n8n running on Node.js **>= 20.15**. Built against `n8nNodesApiVersion:
 ## License
 
 [MIT](https://github.com/GkhanKINAY/postqueen-n8n/blob/main/LICENSE.md). This node is a fork of the
-[Postiz](https://github.com/gitroomhq/postiz-app) community node — thanks to Nevo David and the
+[Postiz](https://github.com/gitroomhq/postiz-app) community node. Thanks to Nevo David and the
 Postiz contributors for the foundation this builds on.
