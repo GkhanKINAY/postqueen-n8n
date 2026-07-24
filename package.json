@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-postqueen",
-  "version": "0.2.21",
+  "version": "1.0.0",
   "description": "PostQueen community node for n8n (fork of n8n-nodes-postiz)",
   "keywords": [
     "social media",
