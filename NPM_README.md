@@ -76,6 +76,14 @@ host. n8n validates it against a live endpoint when you save.
 > **Self-hosting note:** point **Host** at your own instance's API base URL. It must end with
 > `/api`, for example `https://yourdomain.com/api`.
 
+### Cloud or self-host — both work
+
+| | ☁️ PostQueen Cloud | 🐳 Self-hosted PostQueen |
+| --- | --- | --- |
+| **Host** | `https://api.postqueen.ai` (the default) | `https://yourdomain.com/api` — must end with `/api` |
+| **API Key** | [app.postqueen.ai/settings](https://app.postqueen.ai/settings) → Developers → Public API | same screen on your own instance |
+| **Get started** | [postqueen.ai](https://postqueen.ai) — free for 7 days | [docker compose](https://github.com/GkhanKINAY/postqueen-docker-compose) |
+
 ## Operations
 
 | Operation | Description |
@@ -95,11 +103,27 @@ publish to, and optional per-platform settings.
 Format** (`vertical` or `horizontal`), and optional **Custom Parameters** (key/value pairs such as
 `prompt`, `voice` or `images`).
 
-## Example workflow
+## Example workflows
 
-A common shape: **Schedule Trigger → your content source (RSS, Reddit, an AI node) → PostQueen:
-Upload File → PostQueen: Create Post**. Upload media first and pass the returned URL into the post —
-TikTok, Instagram and YouTube only accept media from trusted domains.
+Every PostQueen step below is a real operation of this node; any n8n trigger can start the flow.
+
+**Grow a YouTube channel while you sleep** — a daily Schedule Trigger runs **Generate Video**
+(`veo3` or `image-text-slides`, with your prompt and optionally a voice from **Video Function** →
+`loadVoices`), then **Create Post** queues the finished video to your channel:
+
+![n8n workflow: schedule trigger, PostQueen Generate Video, PostQueen Create Post to YouTube](https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/.github/assets/flow-youtube.svg)
+
+**One clip → TikTok, Reels and Shorts** — a new video file in Drive/Dropbox/S3 triggers
+**Upload File**, and **Create Post** schedules the same clip to TikTok, Instagram and YouTube in one
+go. Upload media first and pass the returned URL into the post — TikTok, Instagram and YouTube only
+accept media from trusted domains:
+
+![n8n workflow: a new video file, PostQueen Upload File, PostQueen Create Post to TikTok, Reels and Shorts](https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/.github/assets/flow-clips.svg)
+
+**Launch-day announcement blast** — a form submission or a new sheet row kicks off a multi-channel
+announcement: **Get Channels** finds your accounts, **Create Post** does the rest:
+
+![n8n workflow: a new sheet row, PostQueen Get Channels, PostQueen Create Post to every channel](https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/.github/assets/flow-launch.svg)
 
 ## Compatibility
 

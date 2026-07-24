@@ -41,17 +41,47 @@
 
 ## 🔁 What you can build
 
+Five workflows this node makes trivial — every PostQueen step below is a real operation of the node, and any n8n trigger (Schedule, RSS, Webhook, Google Sheets, a form) can start them.
+
+### 📰 Blog on autopilot
+
+An **RSS trigger** watches your blog, an AI node writes the caption for each new article, and **Create Post** schedules it to every channel at once.
+
 <p align="center">
   <img src=".github/assets/n8n-flow.svg" width="620" alt="An n8n workflow: RSS trigger, AI caption, PostQueen Create Post, posts scheduled" />
 </p>
 
-A few workflows this node makes trivial:
+### 🎬 Grow a YouTube channel while you sleep
 
-- An **RSS trigger** watches your blog, an AI node writes the caption for each new article, and **Create Post** schedules it to every channel at once.
-- A **form submission**, or a new product launch row landing in a sheet, kicks off a multi-channel announcement: **Get Channels** finds your accounts, **Create Post** does the rest.
-- A **weekly schedule** runs **Generate Video** on a prompt, then **Create Post** puts the finished clip on your feeds.
+A daily **Schedule Trigger** runs **Generate Video** (`veo3` or `image-text-slides`, vertical or horizontal, with your prompt — even a voiceover: list voices with **Video Function** → `loadVoices`), then **Create Post** queues the finished video to your channel. This is worth a second look: the node exposes AI video generation, an operation that not even the PostQueen CLI has.
 
-That last one is worth a second look: the node exposes AI video generation, an operation that not even the PostQueen CLI has.
+<p align="center">
+  <img src=".github/assets/flow-youtube.svg" width="620" alt="An n8n workflow: schedule trigger every morning, PostQueen Generate Video, PostQueen Create Post to YouTube" />
+</p>
+
+### 📱 One clip → TikTok, Reels and Shorts
+
+A new video file landing in Drive, Dropbox or S3 triggers **Upload File**, and **Create Post** schedules the same clip to TikTok, Instagram and YouTube in one go — the posts array takes as many channels as you like. Upload first and pass the returned path into the post: TikTok, Instagram and YouTube only accept media from trusted domains.
+
+<p align="center">
+  <img src=".github/assets/flow-clips.svg" width="620" alt="An n8n workflow: a new video file, PostQueen Upload File, PostQueen Create Post to TikTok, Reels and Shorts" />
+</p>
+
+### 🚀 Launch-day announcement blast
+
+A **form submission** or a new product row landing in a sheet kicks off a multi-channel announcement: **Get Channels** finds your accounts, **Create Post** does the rest — as a draft first if you want a human sign-off.
+
+<p align="center">
+  <img src=".github/assets/flow-launch.svg" width="620" alt="An n8n workflow: a new sheet row, PostQueen Get Channels, PostQueen Create Post to every channel" />
+</p>
+
+### 🛡️ Queue guard
+
+Every Monday, **Get Posts** pulls the next seven days of your calendar; if the queue looks empty, a Slack message tells you before your followers notice.
+
+<p align="center">
+  <img src=".github/assets/flow-guard.svg" width="620" alt="An n8n workflow: every Monday PostQueen Get Posts checks the week and Slack alerts you if the queue is empty" />
+</p>
 
 ---
 
@@ -113,6 +143,18 @@ The node authenticates with a **PostQueen API** credential that has two fields:
 To add the credential in n8n, create a new **PostQueen API** credential, paste your API key, and (if self-hosting) set the host. n8n validates it against a live test endpoint when you save.
 
 > **Self-hosting note:** point **Host** at your own instance's API base URL. It must end with `/api`, for example `https://yourdomain.com/api`.
+
+### ☁️ Cloud or 🐳 self-host — both work
+
+| | ☁️ **PostQueen Cloud** | 🐳 **Self-hosted PostQueen** |
+| --- | --- | --- |
+| **Host** | `https://api.postqueen.ai` (the default) | `https://yourdomain.com/api` — must end with `/api` |
+| **API Key** | [app.postqueen.ai/settings](https://app.postqueen.ai/settings) → Developers → Public API → Reveal | same screen on your own instance: Settings → Developers → Public API |
+| **Get started** | free for 7 days, no card | [`docker compose up`](https://github.com/GkhanKINAY/postqueen-docker-compose) and you are live |
+
+<p align="center">
+  <a href="https://postqueen.ai"><img src=".github/assets/cta-cloud.svg" height="44" alt="Start free in the cloud" /></a>&nbsp;&nbsp;<a href="https://github.com/GkhanKINAY/postqueen-docker-compose"><img src=".github/assets/cta-selfhost.svg" height="44" alt="Self-host with Docker" /></a>
+</p>
 
 ---
 
