@@ -64,6 +64,8 @@ That last one is worth a second look: the node exposes AI video generation, an o
 3. Enter `n8n-nodes-postqueen` as the npm package name.
 4. Click **Install**.
 
+![n8n Community Nodes install modal with n8n-nodes-postqueen entered as the npm package name](community-node.png)
+
 ### npm (manual, non-Docker)
 
 Go to your n8n installation folder (usually `~/.n8n`). If there is no `custom` folder, create one with a `package.json`, then install the package:
