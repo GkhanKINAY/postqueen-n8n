@@ -11,11 +11,23 @@
 <br/>
 
 <p align="center">
-  <strong>Put your social media on an assembly line.</strong>
+  <strong>Stop doing social media yourself.</strong>
 </p>
 
 <p align="center">
-  The official n8n community node: wire PostQueen into any workflow and let it draft, schedule and publish to 30+ networks without writing code. Nobody wakes up wanting a scheduler — people want views, subscribers and sales. This node is how n8n builders get them: every post and video, on every channel, on time, on autopilot.
+  PostQueen is an AI employee for your social media. Tell her what to share, in one sentence. She writes the copy, designs the visual and schedules it on every channel you have. You just review the calendar.
+</p>
+
+<p align="center">
+  <strong>This repo is her assembly line</strong> — the official n8n community node: every post and video your workflow produces, published to every channel, on autopilot.
+</p>
+
+<p align="center">
+  <strong>Free for 7 days in the cloud. Forever free on your own server.</strong>
+</p>
+
+<p align="center">
+  <a href="https://postqueen.ai"><img src=".github/assets/cta-cloud.svg" height="44" alt="Start free for 7 days" /></a>&nbsp;&nbsp;<a href="https://github.com/GkhanKINAY/postqueen-docker-compose"><img src=".github/assets/cta-selfhost.svg" height="44" alt="Self-host it free" /></a>
 </p>
 
 <br/>
@@ -45,13 +57,21 @@
 
 <br/>
 
+<h3 align="center">Schedule and generate posts with AI</h3>
+
+<p align="center">
+  <img src=".github/assets/calendar.svg" width="660" alt="The PostQueen calendar: a week of posts across your channels, with AI generation and drag to reschedule" />
+</p>
+
+<br/>
+
 <p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
 
 <br/>
 
 ## 🔁 What you can build
 
-Seven workflows this node makes trivial — every PostQueen step below is a real operation of the node, and any n8n trigger (Schedule, RSS, Webhook, Google Sheets, a form) can start them.
+Nine workflows this node makes trivial — every PostQueen step below is a real operation of the node, and any n8n trigger (Schedule, RSS, Webhook, Google Sheets, a form) can start them.
 
 ### 🌐 One post, every channel
 
@@ -93,12 +113,28 @@ A **form submission** or a new product row landing in a sheet kicks off a multi-
   <img src=".github/assets/flow-launch.svg" width="620" alt="An n8n workflow: a new sheet row, PostQueen Get Channels, PostQueen Create Post to every channel" />
 </p>
 
+### 📝 Drafts with human sign-off
+
+A form submission (or any trigger) runs **Create Post** with type `draft`, and a Slack message asks the team to review — approve it on the calendar and PostQueen takes it from there.
+
+<p align="center">
+  <img src=".github/assets/flow-drafts.svg" width="620" alt="An n8n workflow: a form submission creates a PostQueen draft and Slack asks you to review" />
+</p>
+
 ### ♻️ Evergreen recycler
 
 Every Friday, **Get Posts** pulls your archive, an AI node picks the winners, and **Create Post** re-queues the evergreen ones — your best content keeps working without anyone touching it.
 
 <p align="center">
   <img src=".github/assets/flow-recycle.svg" width="620" alt="An n8n workflow: every Friday PostQueen Get Posts pulls the archive and Create Post re-queues the best evergreen posts" />
+</p>
+
+### 🗞️ Sunday digest
+
+Every Sunday, an AI node writes the week's roundup and **Create Post** sends it to every channel — a newsletter-grade digest with zero manual steps.
+
+<p align="center">
+  <img src=".github/assets/flow-digest.svg" width="620" alt="An n8n workflow: every Sunday an AI node writes the digest and PostQueen Create Post publishes it everywhere" />
 </p>
 
 ### 🛡️ Queue guard
@@ -255,6 +291,26 @@ Run the whole stack on your own server with [postqueen-docker-compose](https://g
 - 📚 **Getting started?** The [docs](https://docs.postqueen.ai) walk you through everything.
 
 If PostQueen saves you time, a ⭐ on the repo genuinely helps other people find it.
+
+<br/>
+
+<p align="center"><img src=".github/assets/divider.svg" width="840" alt="" /></p>
+
+<br/>
+
+## 🌐 Publish everywhere
+
+One **Create Post**, 30+ networks:
+
+| Category | Networks |
+| --- | --- |
+| **Major social** | X, LinkedIn, Instagram, Facebook, TikTok, YouTube, Threads, Pinterest, Reddit, Bluesky |
+| **Community and chat** | Discord, Slack, Telegram, Mastodon, Twitch, Kick, MeWe, VK |
+| **Publishing and blogs** | WordPress, Medium, Dev.to, Hashnode, Tumblr, Listmonk, Moltbook |
+| **Web3 and decentralized** | Nostr, Farcaster, Lemmy |
+| **Creator and business** | Google Business Profile, Whop, Skool, Dribbble |
+
+LinkedIn and Instagram each support both personal and page posting. New connectors ship regularly: see the full list with per-network guides at [postqueen.ai/channels](https://postqueen.ai/channels).
 
 <br/>
 
