@@ -83,11 +83,11 @@
 
 ## 🔁 What you can build
 
-Nine workflows this node makes trivial — every PostQueen step below is a real operation of the node, and any n8n trigger (Schedule, RSS, Webhook, Google Sheets, a form) can start them.
+Here are nine things you can run with this node, from a simple cross-poster to a channel that grows itself overnight. Every PostQueen step below is a real operation of the node, and any n8n trigger, whether a schedule, an RSS feed, a webhook or a form, can start them.
 
 ### 🌐 One post, every channel
 
-You (or any n8n node) write the content — PostQueen does the publishing. An AI draft, an RSS item, a row from a sheet: one **Create Post** schedules and publishes it to every channel you have, in a single step.
+You (or any n8n node) write the content and PostQueen does the publishing. An AI draft, an RSS item or a row from a sheet goes into one **Create Post**, and it comes out scheduled on every channel you have.
 
 <p align="center">
   <img src=".github/assets/flow-everywhere.svg" width="620" alt="An n8n workflow: any content source, PostQueen Create Post, published to every social channel at once" />
@@ -95,7 +95,7 @@ You (or any n8n node) write the content — PostQueen does the publishing. An AI
 
 ### 📰 Blog on autopilot
 
-An **RSS trigger** watches your blog, an AI node writes the caption for each new article, and **Create Post** schedules it to every channel at once.
+An **RSS trigger** watches your blog, an AI node writes the caption for each new article, and **Create Post** schedules it to every channel at once. Publish the article and walk away; the promotion handles itself.
 
 <p align="center">
   <img src=".github/assets/n8n-flow.svg" width="620" alt="An n8n workflow: RSS trigger, AI caption, PostQueen Create Post, posts scheduled" />
@@ -103,7 +103,7 @@ An **RSS trigger** watches your blog, an AI node writes the caption for each new
 
 ### 🎬 Grow a YouTube channel while you sleep
 
-A daily **Schedule Trigger** runs **Generate Video** (`veo3` or `image-text-slides`, vertical or horizontal, with your prompt — even a voiceover: list voices with **Video Function** → `loadVoices`), then **Create Post** queues the finished video to your channel. This is worth a second look: the node exposes AI video generation, an operation that not even the PostQueen CLI has.
+This is the one people set up and forget. A daily **Schedule Trigger** runs **Generate Video** with your prompt, as `veo3` or `image-text-slides`, vertical or horizontal, with a voiceover if you want one (list the voices with **Video Function** → `loadVoices`). Then **Create Post** queues the finished video to your channel: a new upload every morning, whether you opened your laptop or not. Video generation is an operation even the `postqueen` CLI does not have; this node is the only no-code way to drive it.
 
 <p align="center">
   <img src=".github/assets/flow-youtube.svg" width="620" alt="An n8n workflow: schedule trigger every morning, PostQueen Generate Video, PostQueen Create Post to YouTube" />
@@ -111,7 +111,7 @@ A daily **Schedule Trigger** runs **Generate Video** (`veo3` or `image-text-slid
 
 ### 📱 One clip → TikTok, Reels and Shorts
 
-A new video file landing in Drive, Dropbox or S3 triggers **Upload File**, and **Create Post** schedules the same clip to TikTok, Instagram and YouTube in one go — the posts array takes as many channels as you like. Upload first and pass the returned path into the post: TikTok, Instagram and YouTube only accept media from trusted domains.
+Drop a new video into Drive, Dropbox or S3 and the rest happens on its own: **Upload File** brings the clip in, and one **Create Post** schedules it to TikTok, Instagram and YouTube together, since the posts array takes as many channels as you like. Upload first and pass the returned path into the post; TikTok, Instagram and YouTube only accept media from trusted domains.
 
 <p align="center">
   <img src=".github/assets/flow-clips.svg" width="620" alt="An n8n workflow: a new video file, PostQueen Upload File, PostQueen Create Post to TikTok, Reels and Shorts" />
@@ -119,7 +119,7 @@ A new video file landing in Drive, Dropbox or S3 triggers **Upload File**, and *
 
 ### 🚀 Launch-day announcement blast
 
-A **form submission** or a new product row landing in a sheet kicks off a multi-channel announcement: **Get Channels** finds your accounts, **Create Post** does the rest — as a draft first if you want a human sign-off.
+A **form submission** or a new product row in a sheet kicks off the announcement: **Get Channels** finds your accounts and **Create Post** tells all of them at once. Ask for a draft instead if you want a human to sign off first.
 
 <p align="center">
   <img src=".github/assets/flow-launch.svg" width="620" alt="An n8n workflow: a new sheet row, PostQueen Get Channels, PostQueen Create Post to every channel" />
@@ -127,7 +127,7 @@ A **form submission** or a new product row landing in a sheet kicks off a multi-
 
 ### 📝 Drafts with human sign-off
 
-A form submission (or any trigger) runs **Create Post** with type `draft`, and a Slack message asks the team to review — approve it on the calendar and PostQueen takes it from there.
+A form submission (or any trigger) runs **Create Post** with type `draft`, and a Slack message asks the team to review. Once someone approves it on the calendar, PostQueen takes it from there.
 
 <p align="center">
   <img src=".github/assets/flow-drafts.svg" width="620" alt="An n8n workflow: a form submission creates a PostQueen draft and Slack asks you to review" />
@@ -135,7 +135,7 @@ A form submission (or any trigger) runs **Create Post** with type `draft`, and a
 
 ### ♻️ Evergreen recycler
 
-Every Friday, **Get Posts** pulls your archive, an AI node picks the winners, and **Create Post** re-queues the evergreen ones — your best content keeps working without anyone touching it.
+Every Friday, **Get Posts** pulls your archive, an AI node picks the winners, and **Create Post** re-queues the evergreen ones. Your ten best posts can keep introducing you to new followers for months.
 
 <p align="center">
   <img src=".github/assets/flow-recycle.svg" width="620" alt="An n8n workflow: every Friday PostQueen Get Posts pulls the archive and Create Post re-queues the best evergreen posts" />
@@ -143,7 +143,7 @@ Every Friday, **Get Posts** pulls your archive, an AI node picks the winners, an
 
 ### 🗞️ Sunday digest
 
-Every Sunday, an AI node writes the week's roundup and **Create Post** sends it to every channel — a newsletter-grade digest with zero manual steps.
+Every Sunday, an AI node writes the week's roundup and **Create Post** sends it to every channel. Your audience gets a dependable weekly ritual, and you never have to write it.
 
 <p align="center">
   <img src=".github/assets/flow-digest.svg" width="620" alt="An n8n workflow: every Sunday an AI node writes the digest and PostQueen Create Post publishes it everywhere" />
@@ -274,10 +274,10 @@ flowchart TD
     D --> E["🌐 30+ networks"]
 ```
 
-1. **Say it once.** From the app, WhatsApp, your terminal or ChatGPT.
-2. **She does the work.** Research, platform-specific copy, and an image or video to match.
-3. **You get the final word.** Everything waits on your calendar: edit it, delete it, or keep drafts until you approve them.
-4. **It goes out on time.** A [Temporal](https://temporal.io) workflow engine fires every post exactly when planned, with automatic retries, and refreshes your platform tokens in the background.
+1. **You say it once**, from the app, a chat or your terminal.
+2. **She does the work**: research, copy shaped to each platform, and an image or video to match.
+3. **The calendar is yours**: let it run on autopilot, edit anything before it goes out, or ask for drafts and approve each post yourself.
+4. **It goes out on time**, every time. A [Temporal](https://temporal.io) workflow engine fires each post exactly when planned, retries on failure, and quietly refreshes your platform tokens in the background.
 
 Curious about the internals? Read [how it works](https://docs.postqueen.ai/howitworks) in the docs.
 
@@ -287,13 +287,13 @@ Curious about the internals? Read [how it works](https://docs.postqueen.ai/howit
 
 ## 🌙 An agent that works while you sleep
 
-Agents like **Hermes** and **OpenClaw** can run on a schedule, not just on demand. A small recurring job wakes up every morning, checks yesterday's numbers with `analytics:platform`, and drafts today's post before you have had coffee. Every PostQueen action is a CLI command or an MCP call with clean JSON output, so any agent that can run a command can run your social media.
+She does not clock out when you do. Agents like **Hermes** and **OpenClaw** can run on a schedule, not just on demand: a small recurring job wakes up before you, checks yesterday's numbers with `analytics:platform`, and has today's post drafted while your coffee is still brewing. Each of those steps is a CLI command or an MCP call with JSON output, so any agent that can run a command can hold down the night shift.
 
 <p align="center">
   <img src=".github/assets/nightshift.svg" width="620" alt="At 4 AM the agent wakes up, checks yesterday's numbers and drafts today's post; it waits on your calendar for 9 AM" />
 </p>
 
-**Any other agent works too:** Gemini CLI, Aider, Cline, Warp, Windsurf, or your own scripts. Start from the [Agent guide](https://postqueen.ai/agent) or the [MCP guide](https://postqueen.ai/mcp), and see the full command reference in [postqueen-agent](https://github.com/GkhanKINAY/postqueen-agent).
+**Gemini CLI, Aider and your own cron scripts qualify too.** Start from the [Agent guide](https://postqueen.ai/agent) or the [MCP guide](https://postqueen.ai/mcp), and find the full command reference in [postqueen-agent](https://github.com/GkhanKINAY/postqueen-agent).
 
 <br/>
 
@@ -301,15 +301,15 @@ Agents like **Hermes** and **OpenClaw** can run on a schedule, not just on deman
 
 ## 🦞 Meet her open agents: OpenClaw &amp; Hermes
 
-The two open-source agents everyone is running right now both speak PostQueen natively. **OpenClaw** lives on your machine and answers you from any chat app. **Hermes** does that too — and give it one brief, it plans your whole week on its own. Both drive the same `postqueen` CLI.
+Two open-source agents already speak PostQueen natively. **OpenClaw** lives on your machine and turns any chat app into her front door. **Hermes** does the same, then goes further: hand it a single brief and it plans, writes and schedules your entire week on its own. Both drive the same `postqueen` CLI, so everything they do shows up on your calendar.
 
 <p align="center">
   <img src=".github/assets/open-agents.svg" width="660" alt="OpenClaw and Hermes running PostQueen: chat apps feed OpenClaw, a one-line brief feeds Hermes, both drive the postqueen CLI and posts land on the calendar" />
 </p>
 
-<a href="https://postqueen.ai/openclaw"><img src=".github/assets/spotlight-openclaw.svg" width="410" alt="OpenClaw: runs on your machine; message her from WhatsApp, Telegram, Slack or Discord — set-up guide" /></a> <a href="https://postqueen.ai/hermes-agent"><img src=".github/assets/spotlight-hermes.svg" width="410" alt="Hermes: the self-improving autonomous agent; one brief becomes a planned, verified week — set-up guide" /></a>
+<a href="https://postqueen.ai/openclaw"><img src=".github/assets/spotlight-openclaw.svg" width="410" alt="OpenClaw: runs on your machine and takes her messages from WhatsApp, Telegram, Slack or Discord. Opens the set-up guide." /></a> <a href="https://postqueen.ai/hermes-agent"><img src=".github/assets/spotlight-hermes.svg" width="410" alt="Hermes: the self-improving autonomous agent that turns one brief into a planned, verified week. Opens the set-up guide." /></a>
 
-**Any other agent works too** — anything that can run a CLI command or call MCP can run your socials. [Agent guide »](https://postqueen.ai/agent)
+**Any other agent works too.** If it can run a CLI command or call MCP, it can run your socials. [Agent guide »](https://postqueen.ai/agent)
 
 <br/>
 
@@ -325,7 +325,7 @@ The two open-source agents everyone is running right now both speak PostQueen na
 
 ### ☁️ Cloud, the fast lane
 
-Skip the setup entirely. Create an account, connect your channels, and schedule your first post today: **7-day free trial**, nothing to install, nothing to run.
+Skip the setup entirely: create an account, connect your channels, and your first post can go out today. The **7-day trial** is free, and there is nothing to install or maintain.
 
 <p align="center">
   <a href="https://postqueen.ai"><img src=".github/assets/cta-cloud.svg" height="52" alt="Start free for 7 days" /></a>
@@ -339,7 +339,7 @@ Skip the setup entirely. Create an account, connect your channels, and schedule 
 
 ### 🐳 Self-host, the free lane
 
-Your server. Your keys. Your audience. The whole stack runs on your machine with Docker:
+Some people love running their own tools, and she is happy to move in. The whole stack comes up on your machine with Docker in a few minutes, and it stays free forever, every connector and every feature included:
 
 ```bash
 git clone https://github.com/GkhanKINAY/postqueen-docker-compose
@@ -352,7 +352,7 @@ docker compose up -d          # then open http://localhost:4007
   <img src=".github/assets/compose-up.svg" width="620" alt="docker compose up: the PostQueen stack starts and is ready on localhost 4007" />
 </p>
 
-You will need Docker, about 4 GB of RAM, and for connecting real social accounts a public HTTPS domain behind a reverse proxy (the networks send their OAuth callbacks there). The stack ships the app, PostgreSQL, Redis and Temporal.
+You will need Docker and about 4 GB of RAM. To connect real social accounts you will also need a public HTTPS domain behind a reverse proxy: the networks send their OAuth callbacks there. The stack ships the app and its backing services: PostgreSQL, Redis and Temporal.
 
 Full walkthrough: [self-host guide](https://docs.postqueen.ai/installation/docker-compose) &nbsp;·&nbsp; Kubernetes: [postqueen-helmchart](https://github.com/GkhanKINAY/postqueen-helmchart) &nbsp;·&nbsp; every setting: [configuration reference](https://docs.postqueen.ai/configuration/reference)
 
@@ -362,7 +362,7 @@ Full walkthrough: [self-host guide](https://docs.postqueen.ai/installation/docke
 
 ## 🌐 Publish everywhere
 
-Write once, be everywhere. PostQueen publishes to **30+ networks** out of the box:
+One post from you, and she is everywhere at once. PostQueen publishes to **30+ networks** out of the box:
 
 <p align="center">
   <img src=".github/assets/channels/instagram.svg" height="44" alt="Instagram" /> <img src=".github/assets/channels/youtube.svg" height="44" alt="YouTube" /> <img src=".github/assets/channels/google-business.svg" height="44" alt="Google Business Profile" /> <img src=".github/assets/channels/dribbble.svg" height="44" alt="Dribbble" /> <img src=".github/assets/channels/linkedin.svg" height="44" alt="LinkedIn" /> <img src=".github/assets/channels/reddit.svg" height="44" alt="Reddit" /> <img src=".github/assets/channels/tiktok.svg" height="44" alt="TikTok" /> <img src=".github/assets/channels/facebook.svg" height="44" alt="Facebook" /> <img src=".github/assets/channels/pinterest.svg" height="44" alt="Pinterest" /> <img src=".github/assets/channels/threads.svg" height="44" alt="Threads" /> <img src=".github/assets/channels/x.svg" height="44" alt="X" /> <img src=".github/assets/channels/slack.svg" height="44" alt="Slack" /> <img src=".github/assets/channels/discord.svg" height="44" alt="Discord" /> <img src=".github/assets/channels/mastodon.svg" height="44" alt="Mastodon" /> <img src=".github/assets/channels/bluesky.svg" height="44" alt="Bluesky" /> <img src=".github/assets/channels/lemmy.svg" height="44" alt="Lemmy" /> <img src=".github/assets/channels/warpcast.svg" height="44" alt="Farcaster" /> <img src=".github/assets/channels/telegram.svg" height="44" alt="Telegram" /> <img src=".github/assets/channels/nostr.svg" height="44" alt="Nostr" /> <img src=".github/assets/channels/vk.svg" height="44" alt="VK" /> <img src=".github/assets/channels/devto.svg" height="44" alt="Dev.to" /> <img src=".github/assets/channels/medium.svg" height="44" alt="Medium" /> <img src=".github/assets/channels/hashnode.svg" height="44" alt="Hashnode" /> <img src=".github/assets/channels/wordpress.svg" height="44" alt="WordPress" /> <img src=".github/assets/channels/whop.svg" height="44" alt="Whop" /> <img src=".github/assets/channels/kick.svg" height="44" alt="Kick" /> <img src=".github/assets/channels/mewe.svg" height="44" alt="MeWe" /> <img src=".github/assets/channels/twitch.svg" height="44" alt="Twitch" /> <img src=".github/assets/channels/listmonk.svg" height="44" alt="Listmonk" /> <img src=".github/assets/channels/skool.svg" height="44" alt="Skool" />
