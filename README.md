@@ -5,7 +5,7 @@
 </p>
 
 <h3 align="center">
-  <a href="https://postqueen.ai/agent">🆕 NEW: meet the PostQueen Agent, run your social media from Claude Code, ChatGPT, OpenClaw or Hermes »</a>
+  <a href="https://postqueen.ai/agent">🆕 NEW: meet the PostQueen Agent, run your social media from Claude Code, ChatGPT, OpenClaw, Hermes or Grok Bot »</a>
 </h3>
 
 <br/>
@@ -287,7 +287,7 @@ Curious about the internals? Read [how it works](https://docs.postqueen.ai/howit
 
 ## 🌙 An agent that works while you sleep
 
-She does not clock out when you do. Agents like **Hermes** and **OpenClaw** can run on a schedule, not just on demand: a small recurring job wakes up before you, checks yesterday's numbers with `analytics:platform`, and has today's post drafted while your coffee is still brewing. Each of those steps is a CLI command or an MCP call with JSON output, so any agent that can run a command can hold down the night shift.
+She does not clock out when you do. Agents like **Hermes**, **OpenClaw** and **Grok Bot** can run on a schedule, not just on demand: a small recurring job wakes up before you, checks yesterday's numbers with `analytics:platform`, and has today's post drafted while your coffee is still brewing. Each of those steps is a CLI command or an MCP call with JSON output, so any agent that can run a command can hold down the night shift.
 
 <p align="center">
   <img src=".github/assets/nightshift.svg" width="620" alt="At 4 AM the agent wakes up, checks yesterday's numbers and drafts today's post; it waits on your calendar for 9 AM" />
@@ -299,17 +299,19 @@ She does not clock out when you do. Agents like **Hermes** and **OpenClaw** can 
 
 ---
 
-## 🦞 Meet her open agents: OpenClaw &amp; Hermes
+## 🦞 Meet her bots: OpenClaw, Hermes &amp; Grok Bot
 
 Two open-source agents already speak PostQueen natively. **OpenClaw** lives on your machine and turns any chat app into her front door. **Hermes** does the same, then goes further: hand it a single brief and it plans, writes and schedules your entire week on its own. Both drive the same `postqueen` CLI, so everything they do shows up on your calendar.
+
+**Grok Bot** is the cloud agent, not grok.com chat: tell it the PostQueen MCP URL in the Bot conversation. A custom connector at grok.com/connectors does not install her there.
 
 <p align="center">
   <img src=".github/assets/open-agents.svg" width="660" alt="OpenClaw and Hermes running PostQueen: chat apps feed OpenClaw, a one-line brief feeds Hermes, both drive the postqueen CLI and posts land on the calendar" />
 </p>
 
-<a href="https://postqueen.ai/openclaw"><img src=".github/assets/spotlight-openclaw.svg" width="410" alt="OpenClaw: runs on your machine and takes her messages from WhatsApp, Telegram, Slack or Discord. Opens the set-up guide." /></a> <a href="https://postqueen.ai/hermes-agent"><img src=".github/assets/spotlight-hermes.svg" width="410" alt="Hermes: the self-improving autonomous agent that turns one brief into a planned, verified week. Opens the set-up guide." /></a>
+<a href="https://postqueen.ai/openclaw"><img src=".github/assets/spotlight-openclaw.svg" width="410" alt="OpenClaw: runs on your machine and takes her messages from WhatsApp, Telegram, Slack or Discord. Opens the set-up guide." /></a> <a href="https://postqueen.ai/hermes-agent"><img src=".github/assets/spotlight-hermes.svg" width="410" alt="Hermes: the self-improving autonomous agent that turns one brief into a planned, verified week. Opens the set-up guide." /></a> <a href="https://postqueen.ai/grok-bot"><img src=".github/assets/spotlight-grok-bot.svg" width="410" alt="Grok Bot: the cloud agent. Tell it the MCP URL in chat. Not grok.com/connectors. Opens the set-up guide." /></a>
 
-**Any other agent works too.** If it can run a CLI command or call MCP, it can run your socials. [Agent guide »](https://postqueen.ai/agent)
+**Any other agent works too.** If it can run a CLI command or call MCP, it can run your socials. [Agents overview »](https://docs.postqueen.ai/agents/overview)
 
 <br/>
 
@@ -344,7 +346,7 @@ Some people love running their own tools, and she is happy to move in. The whole
 ```bash
 git clone https://github.com/GkhanKINAY/postqueen-docker-compose
 cd postqueen-docker-compose
-# set a unique JWT_SECRET and your public URLs in docker-compose.yaml
+printf 'JWT_SECRET=%s\nENCRYPTION_KEY=%s\nNOT_SECURED=true\n' "$(openssl rand -hex 32)" "$(openssl rand -hex 32)" > .env
 docker compose up -d          # then open http://localhost:4007
 ```
 
@@ -352,9 +354,9 @@ docker compose up -d          # then open http://localhost:4007
   <img src=".github/assets/compose-up.svg" width="620" alt="docker compose up: the PostQueen stack starts and is ready on localhost 4007" />
 </p>
 
-You will need Docker and about 4 GB of RAM. To connect real social accounts you will also need a public HTTPS domain behind a reverse proxy: the networks send their OAuth callbacks there. The stack ships the app and its backing services: PostgreSQL, Redis and Temporal.
+You will need Docker and about 4 GB of RAM. Write a sibling `.env` next to `docker-compose.yaml` with `JWT_SECRET`, `ENCRYPTION_KEY`, and `NOT_SECURED=true` so local HTTP login works (Safari, and anything that is not treated as localhost). Drop `NOT_SECURED` on public HTTPS. To connect real social accounts you will also need a public HTTPS domain behind a reverse proxy: the networks send their OAuth callbacks there. The stack ships the app and its backing services: PostgreSQL, Redis and Temporal.
 
-Full walkthrough: [deploy to a server](https://docs.postqueen.ai/installation/production) &nbsp;·&nbsp; just looking: [try it locally](https://docs.postqueen.ai/installation/quickstart-local) &nbsp;·&nbsp; Kubernetes: [postqueen-helmchart](https://github.com/GkhanKINAY/postqueen-helmchart) &nbsp;·&nbsp; every setting: [configuration reference](https://docs.postqueen.ai/configuration/reference)
+Full walkthrough: [try it locally](https://docs.postqueen.ai/installation/quickstart-local) &nbsp;·&nbsp; [deploy to a server](https://docs.postqueen.ai/installation/production) &nbsp;·&nbsp; Kubernetes: [postqueen-helmchart](https://github.com/GkhanKINAY/postqueen-helmchart) &nbsp;·&nbsp; every setting: [configuration reference](https://docs.postqueen.ai/configuration/reference)
 
 <br/>
 
