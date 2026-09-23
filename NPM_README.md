@@ -1,150 +1,80 @@
-<p align="center">
-  <a href="https://postqueen.ai">
-    <img src="https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/.github/assets/header.svg" width="840" alt="PostQueen: the queen of your posts, your AI social media assistant" />
-  </a>
-</p>
+# PostQueen n8n node
 
-<p align="center">
-  <a href="https://www.npmjs.com/package/n8n-nodes-postqueen"><img src="https://img.shields.io/npm/v/n8n-nodes-postqueen?color=e0189e" alt="Version on npm"></a>
-  <a href="https://www.npmjs.com/package/n8n-nodes-postqueen"><img src="https://img.shields.io/npm/dm/n8n-nodes-postqueen?color=7c3aed" alt="Downloads on npm"></a>
-  <a href="https://docs.n8n.io/integrations/community-nodes/"><img src="https://img.shields.io/badge/n8n-community%20node-ff6d5a" alt="n8n community node"></a>
+`n8n-nodes-postqueen` is an n8n community node for PostQueen: create, list and delete posts, upload media and start AI video jobs from any workflow.
+
+<p>
+  <a href="https://www.npmjs.com/package/n8n-nodes-postqueen"><img src="https://img.shields.io/npm/v/n8n-nodes-postqueen" alt="npm version"></a>
   <a href="https://github.com/GkhanKINAY/postqueen-n8n/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
 </p>
 
-# n8n-nodes-postqueen
+![The n8n Community Nodes install dialog with n8n-nodes-postqueen entered as the npm package name](https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/community-node.png)
 
-An [n8n](https://n8n.io) community node for [PostQueen](https://postqueen.ai), your AI social media
-manager. Drop it into a workflow and the publishing runs itself: posts scheduled, drafted or sent
-live to 30+ networks, from X and LinkedIn to TikTok and YouTube, with media uploads and AI video
-generation built in. No code required.
+## What it does
 
-## Installation
+- **Create Post** schedules a post, saves it as a draft or publishes it now, on one or more channels in a single call.
+- **Get Posts**, **Get Channels** and **Delete Post** read and tidy your calendar.
+- **Upload File** sends a file from the workflow to PostQueen and returns the path to use in a post.
+- **Generate Video** and **Video Function** start a video with one of the app's video types and run its helpers, such as listing voices.
 
-### n8n UI (recommended)
+[PostQueen](https://postqueen.ai) is a social media scheduler with an AI copilot that posts to 30+ networks. The node calls the PostQueen public API, so everything it creates shows up on the same calendar as the app.
 
-1. Open **Settings → Community Nodes**.
-2. Click **Install**.
-3. Enter `n8n-nodes-postqueen` as the npm package name.
-4. Click **Install**.
+## Quick start
 
-![n8n Community Nodes install modal with n8n-nodes-postqueen entered as the npm package name](https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/community-node.png)
+1. In n8n, open **Settings > Community Nodes**, choose **Install**, enter `n8n-nodes-postqueen` and install it.
+2. Create a **PostQueen API** credential. Paste your API key: in PostQueen, open Connections > API Keys to copy it. Only workspace admins can see the key, and each workspace has one.
+3. Keep **Host** at `https://api.postqueen.ai`. If you run PostQueen yourself, set it to your instance's API address, ending in `/api`, such as `https://postqueen.example.com/api`.
+4. Add the PostQueen node to a workflow and pick an operation.
 
-### npm (manual, non-Docker)
+n8n checks the credential against the API when you save it. The node needs n8n on Node.js 20.15 or newer. No PostQueen account yet? [Start a 7-day trial, $0 due today](https://postqueen.ai/pricing).
 
-Go to your n8n installation folder (usually `~/.n8n`). If there is no `custom` folder, create one
-with a `package.json`, then install the package:
+**Without the Community Nodes screen.** Install the package into n8n's custom folder, then restart n8n:
 
 ```bash
-mkdir -p ~/.n8n/custom
-cd ~/.n8n/custom
+mkdir -p ~/.n8n/custom && cd ~/.n8n/custom
 npm init -y
 npm install n8n-nodes-postqueen
 ```
 
-### Docker
-
-Create a folder on your host machine for custom nodes and install the package there:
-
-```bash
-mkdir -p ~/n8n-custom-nodes
-cd ~/n8n-custom-nodes
-npm init -y
-npm install n8n-nodes-postqueen
-```
-
-Then mount that folder into the container and point n8n at it:
-
-```bash
-docker run -d --name n8n \
-  -v ~/n8n-custom-nodes:/home/node/n8n-custom-nodes \
-  -e N8N_CUSTOM_EXTENSIONS="/home/node/n8n-custom-nodes" \
-  -p 5678:5678 n8nio/n8n
-```
-
-## Credentials
-
-The node authenticates with a **PostQueen API** credential:
-
-| Field | Description |
-| --- | --- |
-| **API Key** | Your PostQueen Public API key. Grab it at [app.postqueen.ai/settings](https://app.postqueen.ai/settings) (Developers → Public API → Reveal). |
-| **Host** | Base URL of the PostQueen API. Defaults to `https://api.postqueen.ai` (cloud). |
-
-Create a new **PostQueen API** credential in n8n, paste your API key, and (if self-hosting) set the
-host. n8n validates it against a live endpoint when you save.
-
-> **Self-hosting note:** point **Host** at your own instance's API base URL. It must end with
-> `/api`, for example `https://yourdomain.com/api`.
-
-### Cloud or self-host: both work
-
-**☁️ Cloud:** leave **Host** at the default `https://api.postqueen.ai` and grab your key at
-[app.postqueen.ai/settings](https://app.postqueen.ai/settings) (Developers → Public API → Reveal).
-Free for 7 days at [postqueen.ai](https://postqueen.ai).
-
-**🐳 Self-host:** run the stack with
-[postqueen-docker-compose](https://github.com/GkhanKINAY/postqueen-docker-compose) and point
-**Host** at your instance; it must end with `/api` (for example `https://yourdomain.com/api`).
-Your key lives on the same screen of your own instance.
+In Docker, install it into a folder on the host, mount that folder into the container and set `N8N_CUSTOM_EXTENSIONS` to its path inside the container.
 
 ## Operations
 
-| Operation | Description |
+| Operation | What it does |
 | --- | --- |
-| **Create Post** | Schedule, draft or immediately publish a post to one or more channels. |
-| **Delete Post** | Delete a post by its ID. |
-| **Generate Video** | Generate a video with AI. |
-| **Get Channels** | List your connected channels (integrations). |
-| **Get Posts** | List posts within a start/end date range, optionally filtered by customer. |
-| **Upload File** | Upload an image or video from a binary property. |
-| **Video Function** | Run a video helper function, such as loading available voices. |
+| Create Post | Create a post with type **Draft**, **Schedule** or **Now**, for one or more channels. The type defaults to **Now**, so pick Draft while you test. |
+| Delete Post | Delete a post by its ID |
+| Generate Video | Start a video: **Video Type** is one of the app's video types, such as `image-text-slides`; **Output Format** is vertical or horizontal; **Custom Parameters** carries the inputs that type expects |
+| Get Channels | List your connected channels and their IDs |
+| Get Posts | List posts between two dates, with an optional customer filter |
+| Upload File | Upload an image or video from a binary property |
+| Video Function | Run a helper of a video type, such as `loadVoices` |
 
-**Create Post** takes the post type (`draft`, `schedule` or `now`), the content, the channels to
-publish to, and optional per-platform settings.
+Video generation uses the AI video credits of your plan. Each network may also need settings of its own on Create Post; the [public API docs](https://docs.postqueen.ai/public-api/introduction) list them per network.
 
-**Generate Video** takes a **Video Type** (for example `image-text-slides` or `veo3`), an **Output
-Format** (`vertical` or `horizontal`), and optional **Custom Parameters** (key/value pairs such as
-`prompt`, `voice` or `images`).
+### Workflow ideas
 
-## Example workflows
+- **Blog to posts:** an RSS trigger watches your blog, an AI node writes the caption, and Create Post schedules it on your channels.
+- **Drafts for review:** any trigger runs Create Post with type Draft, and a Slack message asks the team to check it on the calendar.
+- **Queue check:** a weekly Schedule Trigger runs Get Posts for the next seven days and messages you if the week is empty.
 
-Every PostQueen step below is a real operation of this node; any n8n trigger can start the flow.
+## Privacy and security
 
-**One post, every channel.** You (or any n8n node) write the content and PostQueen does the
-publishing: an AI draft, an RSS item or a sheet row goes out to every channel you have in a
-single **Create Post** step:
+- Channels connect through each network's official OAuth sign-in where the network offers one.
+- Some networks, such as Bluesky, Lemmy, WordPress and Nostr, need an app password or a key that you paste in.
+- PostQueen stores these credentials so it can post for you, and replaces them when you remove the channel.
+- n8n keeps your PostQueen API key in its own credential store. The key gives full access to the workspace.
+- Read the [privacy policy](https://postqueen.ai/privacy-policy), or [delete your account](https://postqueen.ai/delete-my-account).
 
-![n8n workflow: any content source, PostQueen Create Post, published to every social channel at once](https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/.github/assets/flow-everywhere.svg)
-
-**One clip → TikTok, Reels and Shorts.** A new video file in Drive, Dropbox or S3 triggers
-**Upload File**, and **Create Post** schedules the same clip to TikTok, Instagram and YouTube in one
-go. Upload media first and pass the returned URL into the post; TikTok, Instagram and YouTube only
-accept media from trusted domains:
-
-![n8n workflow: a new video file, PostQueen Upload File, PostQueen Create Post to TikTok, Reels and Shorts](https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/.github/assets/flow-clips.svg)
-
-**Launch-day announcement blast.** A form submission or a new sheet row kicks off the announcement:
-**Get Channels** finds your accounts and **Create Post** tells all of them at once:
-
-![n8n workflow: a new sheet row, PostQueen Get Channels, PostQueen Create Post to every channel](https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/.github/assets/flow-launch.svg)
-
-## Compatibility
-
-Requires n8n running on Node.js **>= 20.15**. Built against `n8nNodesApiVersion: 1`.
-
-## Resources
+## Links
 
 | | |
 | --- | --- |
-| PostQueen documentation | [docs.postqueen.ai](https://docs.postqueen.ai) |
-| REST API reference | [api.postqueen.ai/docs](https://api.postqueen.ai/docs) |
-| n8n community nodes guide | [docs.n8n.io](https://docs.n8n.io/integrations/community-nodes/) |
-| Source, examples and issues | [github.com/GkhanKINAY/postqueen-n8n](https://github.com/GkhanKINAY/postqueen-n8n) |
-| CLI | [`postqueen`](https://www.npmjs.com/package/postqueen) |
-| NodeJS SDK | [`@postqueen/node`](https://www.npmjs.com/package/@postqueen/node) |
+| Docs | [n8n guide](https://docs.postqueen.ai/automation/n8n) · [public API](https://docs.postqueen.ai/public-api/introduction) |
+| API reference | [api.postqueen.ai/docs](https://api.postqueen.ai/docs) |
+| npm | [`n8n-nodes-postqueen`](https://www.npmjs.com/package/n8n-nodes-postqueen) |
+| Repositories | [app](https://github.com/GkhanKINAY/postqueen-app) · [CLI and skill](https://github.com/GkhanKINAY/postqueen-agent) · [n8n node](https://github.com/GkhanKINAY/postqueen-n8n) · [docs](https://github.com/GkhanKINAY/postqueen-docs) · [Docker Compose](https://github.com/GkhanKINAY/postqueen-docker-compose) · [Helm chart](https://github.com/GkhanKINAY/postqueen-helmchart) |
+| Help | support@postqueen.ai · [GitHub issues](https://github.com/GkhanKINAY/postqueen-n8n/issues) |
 
 ## License
 
-[MIT](https://github.com/GkhanKINAY/postqueen-n8n/blob/main/LICENSE.md). This node is a fork of the
-[Postiz](https://github.com/gitroomhq/postiz-app) community node. Thanks to Nevo David and the
-Postiz contributors for the foundation this builds on.
+This node is open source under the [MIT license](https://github.com/GkhanKINAY/postqueen-n8n/blob/main/LICENSE.md). PostQueen started as a fork of [Postiz](https://github.com/gitroomhq/postiz-app) by Nevo David, and this node started from [postiz-n8n](https://github.com/gitroomhq/postiz-n8n).
