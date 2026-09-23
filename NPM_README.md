@@ -60,7 +60,7 @@ Video generation uses the AI video credits of your plan. Each network may also n
 ## Privacy and security
 
 - Channels connect through each network's official OAuth sign-in where the network offers one.
-- Some networks, such as Bluesky, Lemmy, WordPress and Nostr, need an app password or a key that you paste in.
+- Some networks, such as Bluesky, Lemmy, WordPress and Nostr, need an app password, an account password or a key that you paste in.
 - PostQueen stores these credentials so it can post for you, and replaces them when you remove the channel.
 - n8n keeps your PostQueen API key in its own credential store. The key gives full access to the workspace.
 - Read the [privacy policy](https://postqueen.ai/privacy-policy), or [delete your account](https://postqueen.ai/delete-my-account).
