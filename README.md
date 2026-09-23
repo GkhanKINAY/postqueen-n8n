@@ -17,8 +17,8 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/n8n-nodes-postqueen"><img src="https://img.shields.io/npm/v/n8n-nodes-postqueen?label=npm&color=7C3AED&labelColor=15131C" alt="npm version"></a>
-  <a href="LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-7C3AED?labelColor=15131C" alt="License: MIT"></a>
+  <a href="https://www.npmjs.com/package/n8n-nodes-postqueen"><img src="https://img.shields.io/npm/v/n8n-nodes-postqueen?label=npm&color=CB3837&labelColor=15131C&logo=npm&logoColor=white" alt="npm version"></a>
+  <a href="LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-2563EB?labelColor=15131C" alt="License: MIT"></a>
 </p>
 
 <p align="center">
