@@ -7,6 +7,13 @@
   <a href="https://github.com/GkhanKINAY/postqueen-n8n/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
 </p>
 
+<p><img src="https://img.shields.io/badge/NEW-7C3AED?style=flat-square" alt="New"> <b>Connect Claude, ChatGPT, Grok Bot or any AI agent to your socials.</b> <a href="https://docs.postqueen.ai/agents/overview">See every agent →</a></p>
+
+<a href="https://docs.postqueen.ai/channels/overview"><img src="https://raw.githubusercontent.com/GkhanKINAY/postqueen-app/main/.github/assets/showcase/channels-row-light.png" width="100%" alt="Posts to 30+ networks: Instagram, TikTok, YouTube, X, LinkedIn, Facebook, Threads, Pinterest, Reddit, Bluesky, Mastodon, Discord, Telegram, Slack, Twitch, Kick, Google Business Profile, Dribbble, Tumblr, WordPress, DEV, Hashnode, VK, MeWe, Lemmy, Nostr, Farcaster, Moltbook, Listmonk, Whop and Skool"></a>
+
+<a href="https://docs.postqueen.ai/agents/overview"><img src="https://raw.githubusercontent.com/GkhanKINAY/postqueen-app/main/.github/assets/showcase/agents-row-light.png" width="100%" alt="Works with the AI agent you already use: Claude, ChatGPT, Grok Bot (new), Grok, Perplexity, Muse (new), Claude Code, Codex, Cursor, Gemini CLI, VS Code, Devin Desktop, Zed, OpenClaw, Hermes, NanoClaw, Paperclip and any MCP app"></a>
+
+
 ![The n8n Community Nodes install dialog with n8n-nodes-postqueen entered as the npm package name](https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/community-node.png)
 
 ## What it does
