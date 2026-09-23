@@ -60,9 +60,14 @@ Video generation uses the AI video credits of your plan. Each network may also n
 
 ### Workflow ideas
 
-- **Blog to posts:** an RSS trigger watches your blog, an AI node writes the caption, and Create Post schedules it on your channels.
-- **Drafts for review:** any trigger runs Create Post with type Draft, and a Slack message asks the team to check it on the calendar.
-- **Queue check:** a weekly Schedule Trigger runs Get Posts for the next seven days and messages you if the week is empty.
+<img src="https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/.github/assets/n8n-recipes-light.png" width="100%" alt="Six workflows to start from: blog to every network, announce every new video, a content calendar in a sheet, a video every week, drafts your team approves, and never an empty week.">
+
+- **Blog to every network:** an RSS Feed Trigger watches your blog, an AI Agent writes a caption for each network, and Create Post schedules it for tomorrow.
+- **Announce every new video:** an RSS Feed Trigger on your YouTube channel's feed spots a new upload, an AI Agent writes the post, and Create Post sends the link to X, LinkedIn and Threads.
+- **A content calendar in a sheet:** a Google Sheets trigger fires on a new row. Upload File sends the row's image to PostQueen, and Create Post schedules the text for the row's date.
+- **A video every week:** a Schedule Trigger runs every Monday, Generate Video makes narrated image slides from a prompt, and Create Post posts the video to TikTok, Instagram Reels and YouTube Shorts.
+- **Drafts your team approves:** a Webhook or form sends the text, Create Post saves it with type Draft, and a Slack message asks the team to check it on the calendar.
+- **Never an empty week:** a Schedule Trigger runs every Friday, Get Posts reads the next seven days, and an If node sends a Slack message when the week is empty.
 
 ## Privacy and security
 
