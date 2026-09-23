@@ -49,10 +49,9 @@
 - **Upload File** sends a file from the workflow to PostQueen and returns the path to use in a post.
 - **Generate Video** and **Video Function** start a video with one of the app's video types and run its helpers, such as listing voices.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/workflow-dark.png">
-  <img src=".github/assets/workflow-light.png" width="100%" alt="Illustration of an n8n workflow: an RSS Feed Trigger, an AI Agent that writes the caption, and the PostQueen node set to Create Post, with its Credential, Operation, Type, Date, Channel ID and Content fields.">
-</picture>
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset=".github/assets/n8n-recipes-dark.png"><img src=".github/assets/n8n-recipes-light.png" width="100%" alt="Six workflows to start from: blog to every network, announce every new video, a content calendar in a sheet, a video every week, drafts your team approves, and never an empty week."></picture>
+</p>
 
 [PostQueen](https://postqueen.ai) is a social media scheduler with an AI copilot that posts to 30+ networks. The node calls the PostQueen public API, so everything it creates shows up on the same calendar as the app.
 
@@ -68,7 +67,14 @@
 3. Keep **Host** at `https://api.postqueen.ai`. If you run PostQueen yourself, set it to your instance's API address, ending in `/api`, such as `https://postqueen.example.com/api`.
 4. Add the PostQueen node to a workflow and pick an operation.
 
-n8n checks the credential against the API when you save it. The node needs n8n on Node.js 20.15 or newer. No PostQueen account yet? [Start a 7-day trial, $0 due today](https://postqueen.ai/pricing).
+This is what it looks like in a workflow, with Create Post scheduling each new blog post for the next day:
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/workflow-dark.png">
+  <img src=".github/assets/workflow-light.png" width="100%" alt="Illustration of an n8n workflow: an RSS Feed Trigger, an AI Agent that writes the caption, and the PostQueen node set to Create Post, with its Credential, Operation, Type, Date, Channel ID and Content fields.">
+</picture>
+
+n8n checks the credential against the API when you save it. The node needs n8n on Node.js 20.15 or newer. No PostQueen account yet? [Start a 7-day trial, $0 due today](https://app.postqueen.ai/auth?utm_source=github&utm_medium=readme&utm_campaign=postqueen-n8n&utm_content=quick-start).
 
 **Without the Community Nodes screen.** Install the package into n8n's custom folder, then restart n8n:
 
@@ -96,9 +102,7 @@ Video generation uses the AI video credits of your plan. Each network may also n
 
 ### Workflow ideas
 
-<p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset=".github/assets/n8n-recipes-dark.png"><img src=".github/assets/n8n-recipes-light.png" width="100%" alt="Six workflows to start from: blog to every network, announce every new video, a content calendar in a sheet, a video every week, drafts your team approves, and never an empty week."></picture>
-</p>
+The six workflows at the top, step by step:
 
 - **Blog to every network:** an RSS Feed Trigger watches your blog, an AI Agent writes a caption for each network, and Create Post schedules it for tomorrow.
 - **Announce every new video:** an RSS Feed Trigger on your YouTube channel's feed spots a new upload, an AI Agent writes the post, and Create Post sends the link to X, LinkedIn and Threads.

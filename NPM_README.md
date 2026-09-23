@@ -25,6 +25,9 @@
 
 [PostQueen](https://postqueen.ai) is a social media scheduler with an AI copilot that posts to 30+ networks. The node calls the PostQueen public API, so everything it creates shows up on the same calendar as the app.
 
+
+<img src="https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/.github/assets/n8n-recipes-light.png" width="100%" alt="Six workflows to start from: blog to every network, announce every new video, a content calendar in a sheet, a video every week, drafts your team approves, and never an empty week.">
+
 ## Quick start
 
 1. In n8n, open **Settings > Community Nodes**, choose **Install**, enter `n8n-nodes-postqueen` and install it.
@@ -32,7 +35,7 @@
 3. Keep **Host** at `https://api.postqueen.ai`. If you run PostQueen yourself, set it to your instance's API address, ending in `/api`, such as `https://postqueen.example.com/api`.
 4. Add the PostQueen node to a workflow and pick an operation.
 
-n8n checks the credential against the API when you save it. The node needs n8n on Node.js 20.15 or newer. No PostQueen account yet? [Start a 7-day trial, $0 due today](https://postqueen.ai/pricing).
+n8n checks the credential against the API when you save it. The node needs n8n on Node.js 20.15 or newer. No PostQueen account yet? [Start a 7-day trial, $0 due today](https://app.postqueen.ai/auth?utm_source=github&utm_medium=readme&utm_campaign=postqueen-n8n&utm_content=npm-quick-start).
 
 **Without the Community Nodes screen.** Install the package into n8n's custom folder, then restart n8n:
 
@@ -60,7 +63,7 @@ Video generation uses the AI video credits of your plan. Each network may also n
 
 ### Workflow ideas
 
-<img src="https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/.github/assets/n8n-recipes-light.png" width="100%" alt="Six workflows to start from: blog to every network, announce every new video, a content calendar in a sheet, a video every week, drafts your team approves, and never an empty week.">
+The six workflows at the top, step by step:
 
 - **Blog to every network:** an RSS Feed Trigger watches your blog, an AI Agent writes a caption for each network, and Create Post schedules it for tomorrow.
 - **Announce every new video:** an RSS Feed Trigger on your YouTube channel's feed spots a new upload, an AI Agent writes the post, and Create Post sends the link to X, LinkedIn and Threads.
