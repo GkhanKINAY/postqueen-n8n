@@ -1,17 +1,21 @@
 # PostQueen n8n node
 
-`n8n-nodes-postqueen` is an n8n community node for PostQueen: create, list and delete posts, upload media and start AI video jobs from any workflow.
+<a href="https://app.postqueen.ai/auth?utm_source=npm&utm_medium=readme&utm_campaign=n8n-nodes-postqueen&utm_content=npm-banner"><img src="https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/.github/assets/banner-light.png" width="100%" alt="PostQueen n8n node. Schedule posts from n8n workflows: create posts, upload media and start AI video jobs."></a>
 
 <p>
-  <a href="https://www.npmjs.com/package/n8n-nodes-postqueen"><img src="https://img.shields.io/npm/v/n8n-nodes-postqueen" alt="npm version"></a>
-  <a href="https://github.com/GkhanKINAY/postqueen-n8n/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
+  <a href="https://www.npmjs.com/package/n8n-nodes-postqueen"><img src="https://img.shields.io/npm/v/n8n-nodes-postqueen?label=npm&color=CB3837&labelColor=15131C&logo=npm&logoColor=white" alt="npm version"></a>
+  <a href="https://github.com/GkhanKINAY/postqueen-n8n/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-2563EB?labelColor=15131C" alt="License: MIT"></a>
 </p>
 
 <a href="https://docs.postqueen.ai/agents/grok-bot"><img src="https://raw.githubusercontent.com/GkhanKINAY/postqueen-app/main/.github/assets/showcase/announce-light.png" width="100%" alt="New: Grok Bot is here. Connect Claude, ChatGPT, Grok Bot or any AI agent to your socials."></a>
 
-<p><a href="https://app.postqueen.ai/auth?utm_source=github&utm_medium=readme&utm_campaign=postqueen-n8n&utm_content=npm-button"><img src="https://raw.githubusercontent.com/GkhanKINAY/postqueen-app/main/.github/assets/showcase/btn-trial-light.png" width="351" alt="Start 7-day trial for $0"></a><a href="https://docs.postqueen.ai/agents/overview"><img src="https://raw.githubusercontent.com/GkhanKINAY/postqueen-app/main/.github/assets/showcase/btn-agent-light.png" width="325" alt="Connect your AI agent"></a></p>
+<p><a href="https://app.postqueen.ai/auth?utm_source=npm&utm_medium=readme&utm_campaign=n8n-nodes-postqueen&utm_content=npm-button"><img src="https://raw.githubusercontent.com/GkhanKINAY/postqueen-app/main/.github/assets/showcase/btn-trial-light.png" width="351" alt="Start 7-day trial for $0"></a><a href="https://docs.postqueen.ai/agents/overview"><img src="https://raw.githubusercontent.com/GkhanKINAY/postqueen-app/main/.github/assets/showcase/btn-agent-light.png" width="325" alt="Connect your AI agent"></a></p>
+
+<sub><b>$0 due today.</b> A card is required, and you pay nothing if you cancel within 7 days.</sub>
 
 <a href="https://docs.postqueen.ai/agents/overview"><img src="https://raw.githubusercontent.com/GkhanKINAY/postqueen-app/main/.github/assets/showcase/works-light.png" width="100%" alt="Use the agent you already have: Claude, ChatGPT, Grok Bot (new), Grok, Perplexity, Muse (new), Claude Code, Codex, Cursor, Gemini CLI, VS Code, Devin Desktop, Zed, OpenClaw, Hermes, NanoClaw, Paperclip and any MCP app. Posts to 30+ networks."></a>
+
+`n8n-nodes-postqueen` is an n8n community node for PostQueen: create, list and delete posts, upload media and start AI video jobs from any workflow.
 
 
 ![The n8n Community Nodes install dialog with n8n-nodes-postqueen entered as the npm package name](https://raw.githubusercontent.com/GkhanKINAY/postqueen-n8n/main/community-node.png)
@@ -35,7 +39,7 @@
 3. Keep **Host** at `https://api.postqueen.ai`. If you run PostQueen yourself, set it to your instance's API address, ending in `/api`, such as `https://postqueen.example.com/api`.
 4. Add the PostQueen node to a workflow and pick an operation.
 
-n8n checks the credential against the API when you save it. The node needs n8n on Node.js 20.15 or newer. No PostQueen account yet? [Start a 7-day trial, $0 due today](https://app.postqueen.ai/auth?utm_source=github&utm_medium=readme&utm_campaign=postqueen-n8n&utm_content=npm-quick-start).
+n8n checks the credential against the API when you save it. The node needs n8n on Node.js 20.15 or newer. No PostQueen account yet? [Start a 7-day trial, $0 due today](https://app.postqueen.ai/auth?utm_source=npm&utm_medium=readme&utm_campaign=n8n-nodes-postqueen&utm_content=quick-start).
 
 **Without the Community Nodes screen.** Install the package into n8n's custom folder, then restart n8n:
 
@@ -79,6 +83,10 @@ The six workflows at the top, step by step:
 - PostQueen stores these credentials so it can post for you, and replaces them when you remove the channel.
 - n8n keeps your PostQueen API key in its own credential store. The key gives full access to the workspace.
 - Read the [privacy policy](https://postqueen.ai/privacy-policy), or [delete your account](https://postqueen.ai/delete-my-account).
+
+**No PostQueen account yet?** The node posts through PostQueen Cloud: start a trial, copy the key from Connections > API Keys, and your workflows can post.
+
+<a href="https://app.postqueen.ai/auth?utm_source=npm&utm_medium=readme&utm_campaign=n8n-nodes-postqueen&utm_content=npm-closing-band"><img src="https://raw.githubusercontent.com/GkhanKINAY/postqueen-app/main/.github/assets/showcase/cta-light.png" width="100%" alt="Ready when you are: hand your next post to your agent. Start 7-day trial for $0. $0 due today, cancel in one click."></a>
 
 ## Links
 
