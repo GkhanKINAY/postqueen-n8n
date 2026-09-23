@@ -1,13 +1,25 @@
-# PostQueen n8n node
-
-`n8n-nodes-postqueen` is an n8n community node for PostQueen: create, list and delete posts, upload media and start AI video jobs from any workflow.
-
-<p>
-  <a href="https://www.npmjs.com/package/n8n-nodes-postqueen"><img src="https://img.shields.io/npm/v/n8n-nodes-postqueen" alt="npm version"></a>
-  <a href="LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/banner-dark.png">
+    <img src=".github/assets/banner-light.png" width="100%" alt="PostQueen n8n node. Schedule posts from n8n workflows: create posts, upload media and start AI video jobs.">
+  </picture>
 </p>
 
-![The n8n Community Nodes install dialog with n8n-nodes-postqueen entered as the npm package name](community-node.png)
+<p align="center">
+  <code>n8n-nodes-postqueen</code> is an n8n community node for PostQueen: create, list and delete posts, upload media and start AI video jobs from any workflow.
+</p>
+
+<p align="center">
+  <a href="https://postqueen.ai"><b>Website</b></a> ·
+  <a href="https://docs.postqueen.ai/automation/n8n"><b>Docs</b></a> ·
+  <a href="https://postqueen.ai/pricing"><b>Pricing</b></a> ·
+  <a href="https://www.npmjs.com/package/n8n-nodes-postqueen"><b>npm</b></a>
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/n8n-nodes-postqueen"><img src="https://img.shields.io/npm/v/n8n-nodes-postqueen?label=npm&color=7C3AED&labelColor=15131C" alt="npm version"></a>
+  <a href="LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-7C3AED?labelColor=15131C" alt="License: MIT"></a>
+</p>
 
 ## What it does
 
@@ -16,11 +28,21 @@
 - **Upload File** sends a file from the workflow to PostQueen and returns the path to use in a post.
 - **Generate Video** and **Video Function** start a video with one of the app's video types and run its helpers, such as listing voices.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/workflow-dark.png">
+  <img src=".github/assets/workflow-light.png" width="100%" alt="Illustration of an n8n workflow: an RSS Feed Trigger, an AI Agent that writes the caption, and the PostQueen node set to Create Post, with its Credential, Operation, Type, Date, Channel ID and Content fields.">
+</picture>
+
 [PostQueen](https://postqueen.ai) is a social media scheduler with an AI copilot that posts to 30+ networks. The node calls the PostQueen public API, so everything it creates shows up on the same calendar as the app.
 
 ## Quick start
 
 1. In n8n, open **Settings > Community Nodes**, choose **Install**, enter `n8n-nodes-postqueen` and install it.
+   <details><summary>Show the install dialog</summary>
+
+   ![The n8n Community Nodes install dialog with n8n-nodes-postqueen entered as the npm package name](community-node.png)
+
+   </details>
 2. Create a **PostQueen API** credential. Paste your API key: in PostQueen, open Connections > API Keys to copy it. Only workspace admins can see the key, and each workspace has one.
 3. Keep **Host** at `https://api.postqueen.ai`. If you run PostQueen yourself, set it to your instance's API address, ending in `/api`, such as `https://postqueen.example.com/api`.
 4. Add the PostQueen node to a workflow and pick an operation.
@@ -60,7 +82,7 @@ Video generation uses the AI video credits of your plan. Each network may also n
 ## Privacy and security
 
 - Channels connect through each network's official OAuth sign-in where the network offers one.
-- Some networks, such as Bluesky, Lemmy, WordPress and Nostr, need an app password or a key that you paste in.
+- Some networks, such as Bluesky, Lemmy, WordPress and Nostr, need an app password, an account password or a key that you paste in.
 - PostQueen stores these credentials so it can post for you, and replaces them when you remove the channel.
 - n8n keeps your PostQueen API key in its own credential store. The key gives full access to the workspace.
 - Read the [privacy policy](https://postqueen.ai/privacy-policy), or [delete your account](https://postqueen.ai/delete-my-account).
