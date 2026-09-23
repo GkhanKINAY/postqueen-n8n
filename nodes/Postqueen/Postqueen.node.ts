@@ -94,7 +94,8 @@ export class PostQueen implements INodeType {
 				},
 				default: 'image-text-slides',
 				required: true,
-				description: 'Type of video to generate (e.g., image-text-slides, veo3)',
+				description:
+					'Type of video to generate: image-text-slides (narrated slides) or seedance (Seedance 2.0, video with audio)',
 			},
 			{
 				displayName: 'Output Format',
@@ -144,7 +145,7 @@ export class PostQueen implements INodeType {
 								type: 'string',
 								default: '',
 								required: true,
-								description: 'Parameter key (e.g., voice, images)',
+								description: 'Parameter key (e.g., prompt, voice, images)',
 							},
 							{
 								displayName: 'Value',
@@ -152,13 +153,15 @@ export class PostQueen implements INodeType {
 								type: 'string',
 								default: '',
 								required: true,
-								description: 'Parameter value',
+								description: 'Parameter value. A value that is valid JSON, such as an array, is sent parsed.',
 							},
 						],
 					},
 				],
+				// The images example is JSON the API validates: its key is a lowercase id, not ID
+				// eslint-disable-next-line n8n-nodes-base/node-param-description-miscased-id
 				description:
-					'Custom parameters for video generation (e.g., prompt: "description", voice: voice-ID, images: [{"ID":"...","path":"..."}])',
+					'Inputs the video type expects. image-text-slides: prompt (text) and voice (a voice ID from the loadVoices video function). seedance: prompt (text) and images, up to 3 uploaded files as [{"id":"...","path":"https://..."}], or [] for text to video.',
 			},
 			// Video Function parameters
 			{
@@ -220,12 +223,12 @@ export class PostQueen implements INodeType {
 								type: 'string',
 								default: '',
 								required: true,
-								description: 'Parameter value',
+								description: 'Parameter value. A value that is valid JSON, such as an array, is sent parsed.',
 							},
 						],
 					},
 				],
-				description: 'Additional parameters for the video function',
+				description: 'Parameters sent to the function as params. loadVoices takes none.',
 			},
 			// CreatePost parameters
 			{
@@ -536,7 +539,7 @@ export class PostQueen implements INodeType {
 						],
 					},
 				],
-				description: 'Posts array (required for non-draft)',
+				description: 'Posts to create, one per channel. At least one is required, drafts included.',
 			},
 			// GetPosts parameters
 			{
@@ -790,15 +793,21 @@ export class PostQueen implements INodeType {
 					const body: any = {
 						functionName,
 						identifier,
+						params: {},
 					};
 
-					// Add additional parameters dynamically
+					// The API reads the function's input from `params` and ignores top-level keys
 					if (
 						additionalParametersParam.parameter &&
 						additionalParametersParam.parameter.length > 0
 					) {
 						additionalParametersParam.parameter.forEach((param: any) => {
-							body[param.key] = param.value;
+							// Try to parse JSON values, otherwise use as string
+							try {
+								body.params[param.key] = JSON.parse(param.value);
+							} catch {
+								body.params[param.key] = param.value;
+							}
 						});
 					}
 

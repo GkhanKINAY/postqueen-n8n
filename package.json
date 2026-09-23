@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-postqueen",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "PostQueen community node for n8n: schedule posts, upload media and generate AI videos across 30+ networks from your workflows.",
   "keywords": [
     "social media",
