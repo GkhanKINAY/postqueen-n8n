@@ -65,11 +65,11 @@ In Docker, install it into a folder on the host, mount that folder into the cont
 | --- | --- |
 | Create Post | Create a post with type **Draft**, **Schedule** or **Now**, for one or more channels. The type defaults to **Now**, so pick Draft while you test. |
 | Delete Post | Delete a post by its ID |
-| Generate Video | Start a video: **Video Type** is one of the app's video types, such as `image-text-slides`; **Output Format** is vertical or horizontal; **Custom Parameters** carries the inputs that type expects |
+| Generate Video | Make a video and return the finished file. **Video Type** is `image-text-slides` (narrated slides, with the Custom Parameters `prompt` and `voice`) or `seedance` (Seedance 2.0 with audio, with `prompt` and `images`: up to three uploaded files as `[{"id":"...","path":"https://..."}]`, or `[]` for text to video). **Output Format** is vertical or horizontal |
 | Get Channels | List your connected channels and their IDs |
 | Get Posts | List posts between two dates, with an optional customer filter |
 | Upload File | Upload an image or video from a binary property |
-| Video Function | Run a helper of a video type, such as `loadVoices` |
+| Video Function | Run a helper of a video type, such as `loadVoices` on `image-text-slides` for the voice IDs. **Additional Parameters** are sent to the helper as its `params` |
 
 Video generation uses the AI video credits of your plan. Each network may also need settings of its own on Create Post; the [public API docs](https://docs.postqueen.ai/public-api/introduction) list them per network.
 
