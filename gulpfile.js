@@ -5,5 +5,5 @@ const {copyFile} = require('fs/promises');
 task('build:icons', copyIcons);
 
 async function copyIcons() {
-	return copyFile('nodes/Postqueen/postqueen.png', 'dist/nodes/Postqueen/postqueen.png');
+	return copyFile('nodes/Postqueen/postqueen.svg', 'dist/nodes/Postqueen/postqueen.svg');
 }

@@ -13,8 +13,7 @@ export class PostQueen implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'PostQueen',
 		name: 'postqueen',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
-		icon: 'file:postqueen.png',
+		icon: 'file:postqueen.svg',
 		group: ['output'],
 		version: 1,
 		subtitle: '={{$parameter["operation"]}}',
