@@ -2,12 +2,14 @@ import {
 	IAuthenticateGeneric,
 	ICredentialTestRequest,
 	ICredentialType,
+	Icon,
 	INodeProperties,
 } from 'n8n-workflow';
 
 export class PostQueenApi implements ICredentialType {
 	name = 'postqueenApi';
 	displayName = 'PostQueen API';
+	icon: Icon = 'file:../nodes/Postqueen/postqueen.svg';
 	documentationUrl = 'https://docs.postqueen.ai/public-api';
 	properties: INodeProperties[] = [
 		{
